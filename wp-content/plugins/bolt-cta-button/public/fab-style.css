@@ -1,0 +1,308 @@
+/**
+ * Bolt CTA Button - FAB (Floating Action Button) Styles
+ *
+ * @package BoltCTAButton
+ */
+
+/* ── FAB Container ── */
+.cncb-fab {
+	position: fixed;
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Default: open upward */
+.cncb-fab {
+	flex-direction: column-reverse;
+}
+
+/* Corner positioning */
+.cncb-fab-rb { right: 16px; bottom: 16px; }
+.cncb-fab-lb { left: 16px; bottom: 16px; }
+.cncb-fab-rt { right: 16px; top: 16px; flex-direction: column; }
+.cncb-fab-lt { left: 16px; top: 16px; flex-direction: column; }
+
+/* Open directions */
+.cncb-fab-dir-left {
+	flex-direction: row-reverse;
+}
+.cncb-fab-dir-right {
+	flex-direction: row;
+}
+.cncb-fab-dir-up {
+	flex-direction: column-reverse;
+}
+
+/* Top corners + up = reverse to down */
+.cncb-fab-rt.cncb-fab-dir-up,
+.cncb-fab-lt.cncb-fab-dir-up {
+	flex-direction: column;
+}
+
+/* ── Main Button ── */
+.cncb-fab-main {
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+	position: relative;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	flex-shrink: 0;
+	z-index: 2;
+}
+
+.cncb-fab-main:hover {
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cncb-fab-main:active {
+	transform: scale(0.93) !important;
+}
+
+.cncb-fab-main:focus-visible {
+	outline: 3px solid rgba(255, 255, 255, 0.6);
+	outline-offset: 3px;
+}
+
+.cncb-fab-main svg {
+	fill: currentColor;
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Rotate icon on open */
+.cncb-fab-open .cncb-fab-main svg {
+	transform: rotate(135deg);
+}
+
+/* Size variants */
+.cncb-fab-size-48 .cncb-fab-main { width: 48px; height: 48px; }
+.cncb-fab-size-48 .cncb-fab-main svg { width: 22px; height: 22px; }
+
+.cncb-fab-size-56 .cncb-fab-main { width: 56px; height: 56px; }
+.cncb-fab-size-56 .cncb-fab-main svg { width: 26px; height: 26px; }
+
+.cncb-fab-size-64 .cncb-fab-main { width: 64px; height: 64px; }
+.cncb-fab-size-64 .cncb-fab-main svg { width: 30px; height: 30px; }
+
+/* ── Badge ── */
+.cncb-fab-badge {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	width: 14px;
+	height: 14px;
+	background: #ff3b30;
+	border-radius: 50%;
+	border: 2.5px solid #fff;
+	box-shadow: 0 1px 4px rgba(255, 59, 48, 0.4);
+	animation: cncb-badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cncb-badge-pulse {
+	0%, 100% { transform: scale(1); }
+	50% { transform: scale(1.15); }
+}
+
+/* ── Sub-buttons Container ── */
+.cncb-fab-subs {
+	display: flex;
+	flex-direction: inherit;
+	gap: 10px;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.cncb-fab-open .cncb-fab-subs {
+	pointer-events: auto;
+}
+
+/* ── Sub-button ── */
+.cncb-fab-sub {
+	display: flex;
+	align-items: center;
+	position: relative;
+	text-decoration: none !important;
+}
+
+.cncb-fab-sub-btn {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none !important;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	transition: filter 0.2s, transform 0.2s;
+	flex-shrink: 0;
+	color: inherit;
+}
+
+.cncb-fab-sub-btn:hover {
+	filter: brightness(1.15);
+	transform: scale(1.08);
+}
+
+.cncb-fab-sub-btn:active {
+	transform: scale(0.95);
+}
+
+.cncb-fab-sub-btn svg {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
+}
+
+/* ── Tooltip ── */
+.cncb-fab-tooltip {
+	position: absolute;
+	white-space: nowrap;
+	background: rgba(0, 0, 0, 0.82);
+	color: #fff;
+	padding: 5px 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Tooltip position based on FAB corner */
+.cncb-fab-rb .cncb-fab-tooltip,
+.cncb-fab-rt .cncb-fab-tooltip {
+	right: calc(100% + 10px);
+}
+
+.cncb-fab-lb .cncb-fab-tooltip,
+.cncb-fab-lt .cncb-fab-tooltip {
+	left: calc(100% + 10px);
+}
+
+/* Tooltip for horizontal directions */
+.cncb-fab-dir-left .cncb-fab-tooltip,
+.cncb-fab-dir-right .cncb-fab-tooltip {
+	bottom: calc(100% + 8px);
+	right: auto;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* Show tooltip on hover when FAB is open */
+.cncb-fab-open .cncb-fab-sub:hover .cncb-fab-tooltip {
+	opacity: 1;
+}
+
+/* ──────── ANIMATIONS ──────── */
+
+/* Fan */
+.cncb-fab-anim-fan .cncb-fab-sub-btn {
+	transform: scale(0);
+	opacity: 0;
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s;
+}
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub-btn {
+	transform: scale(1);
+	opacity: 1;
+}
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub:nth-child(1) .cncb-fab-sub-btn { transition-delay: 0.03s; }
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub:nth-child(2) .cncb-fab-sub-btn { transition-delay: 0.08s; }
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub:nth-child(3) .cncb-fab-sub-btn { transition-delay: 0.13s; }
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub:nth-child(4) .cncb-fab-sub-btn { transition-delay: 0.18s; }
+.cncb-fab-anim-fan.cncb-fab-open .cncb-fab-sub:nth-child(5) .cncb-fab-sub-btn { transition-delay: 0.23s; }
+
+/* Slide */
+.cncb-fab-anim-slide .cncb-fab-sub-btn {
+	opacity: 0;
+	transition: transform 0.3s ease, opacity 0.25s;
+}
+.cncb-fab-dir-up .cncb-fab-anim-slide .cncb-fab-sub-btn,
+.cncb-fab-anim-slide .cncb-fab-sub-btn {
+	transform: translateY(20px);
+}
+.cncb-fab-dir-left .cncb-fab-anim-slide .cncb-fab-sub-btn {
+	transform: translateX(20px);
+}
+.cncb-fab-dir-right .cncb-fab-anim-slide .cncb-fab-sub-btn {
+	transform: translateX(-20px);
+}
+.cncb-fab-anim-slide.cncb-fab-open .cncb-fab-sub-btn {
+	transform: translate(0);
+	opacity: 1;
+}
+
+/* Scale */
+.cncb-fab-anim-scale .cncb-fab-sub-btn {
+	transform: scale(0);
+	opacity: 0;
+	transition: transform 0.25s ease, opacity 0.2s;
+}
+.cncb-fab-anim-scale.cncb-fab-open .cncb-fab-sub-btn {
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* Stagger (like fan, more pronounced delay) */
+.cncb-fab-anim-stagger .cncb-fab-sub-btn {
+	transform: scale(0) rotate(-90deg);
+	opacity: 0;
+	transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s;
+}
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub-btn {
+	transform: scale(1) rotate(0);
+	opacity: 1;
+}
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub:nth-child(1) .cncb-fab-sub-btn { transition-delay: 0.05s; }
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub:nth-child(2) .cncb-fab-sub-btn { transition-delay: 0.12s; }
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub:nth-child(3) .cncb-fab-sub-btn { transition-delay: 0.19s; }
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub:nth-child(4) .cncb-fab-sub-btn { transition-delay: 0.26s; }
+.cncb-fab-anim-stagger.cncb-fab-open .cncb-fab-sub:nth-child(5) .cncb-fab-sub-btn { transition-delay: 0.33s; }
+
+/* ── Overlay (optional dim behind FAB when open) ── */
+.cncb-fab-overlay {
+	display: none;
+}
+.cncb-fab-open + .cncb-fab-overlay {
+	display: block;
+	position: fixed;
+	inset: 0;
+	z-index: 999998;
+}
+
+/* ── Trigger hidden state ── */
+.cncb-fab.cncb-trigger-hidden {
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(0.5);
+}
+
+/* ── Device visibility ── */
+.cncb-fab.cncb-mobile-only { display: none; }
+.cncb-fab.cncb-desktop-only { display: flex; }
+@media (max-width: 768px) {
+	.cncb-fab.cncb-mobile-only { display: flex; }
+	.cncb-fab.cncb-desktop-only { display: none !important; }
+}
+
+/* ── Safe area ── */
+.cncb-fab-rb,
+.cncb-fab-lb {
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── Print ── */
+@media print {
+	.cncb-fab,
+	.cncb-fab-overlay {
+		display: none !important;
+	}
+}

@@ -1,0 +1,618 @@
+# Russian translation for Bolt CTA Button
+# Copyright (C) 2024-2026 Developer Starter flavor
+# This file is distributed under the same license as the Bolt CTA Button plugin.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Bolt CTA Button 2.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-03 00:00+0000\n"
+"PO-Revision-Date: 2026-04-03 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: bolt-cta-button.php
+msgid "Settings"
+msgstr "Настройки"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button"
+msgstr "Bolt CTA Button"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button Settings"
+msgstr "Настройки Bolt CTA Button"
+
+#: admin/class-cncb-admin.php
+msgid "Turkce"
+msgstr "Турецкий"
+
+#: admin/class-cncb-admin.php
+msgid "English"
+msgstr "Английский"
+
+#: admin/class-cncb-admin.php
+msgid "General & Buttons"
+msgstr "Основные и кнопки"
+
+#: admin/class-cncb-admin.php
+msgid "Template & Design"
+msgstr "Шаблон и дизайн"
+
+#: admin/class-cncb-admin.php
+msgid "Display Rules"
+msgstr "Правила отображения"
+
+#: admin/class-cncb-admin.php
+msgid "Analytics"
+msgstr "Аналитика"
+
+#: admin/class-cncb-admin.php
+msgid "Advanced"
+msgstr "Дополнительно"
+
+#: admin/class-cncb-admin.php
+msgid "General Settings"
+msgstr "Общие настройки"
+
+#: admin/class-cncb-admin.php
+msgid "Enable"
+msgstr "Включить"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Mobile"
+msgstr "Показывать на мобильных"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Desktop"
+msgstr "Показывать на компьютерах"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Behavior"
+msgstr "Поведение при прокрутке"
+
+#: admin/class-cncb-admin.php
+msgid "Always Visible"
+msgstr "Всегда видимый"
+
+#: admin/class-cncb-admin.php
+msgid "Hide on Scroll Down"
+msgstr "Скрывать при прокрутке вниз"
+
+#: admin/class-cncb-admin.php
+msgid "Icon Source"
+msgstr "Источник иконок"
+
+#: admin/class-cncb-admin.php
+msgid "Built-in SVG"
+msgstr "Встроенные SVG"
+
+#: admin/class-cncb-admin.php
+msgid "Font Awesome (CDN)"
+msgstr "Font Awesome (CDN)"
+
+#: admin/class-cncb-admin.php
+msgid "SVG icons have no external dependency. Font Awesome loads from CDN."
+msgstr "SVG-иконки не требуют внешних зависимостей. Font Awesome загружается через CDN."
+
+#: admin/class-cncb-admin.php
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: admin/class-cncb-admin.php
+msgid "Drag and drop to reorder buttons. Maximum 5 buttons."
+msgstr "Перетащите для изменения порядка кнопок. Максимум 5 кнопок."
+
+#: admin/class-cncb-admin.php
+msgid "+ Add Button"
+msgstr "+ Добавить кнопку"
+
+#: admin/class-cncb-admin.php
+msgid "Template"
+msgstr "Шаблон"
+
+#: admin/class-cncb-admin.php
+msgid "Choose the main layout template for your CTA."
+msgstr "Выберите основной шаблон макета для вашего CTA."
+
+#: admin/class-cncb-admin.php
+msgid "Bar"
+msgstr "Панель"
+
+#: admin/class-cncb-admin.php
+msgid "A full-width sticky bar with button icons."
+msgstr "Закреплённая панель на всю ширину с иконками кнопок."
+
+#: admin/class-cncb-admin.php
+msgid "Floating Action Button"
+msgstr "Плавающая кнопка действия"
+
+#: admin/class-cncb-admin.php
+msgid "A circular FAB that expands to show buttons."
+msgstr "Круглая плавающая кнопка, раскрывающая дополнительные кнопки."
+
+#: admin/class-cncb-admin.php
+msgid "Mobile Template"
+msgstr "Мобильный шаблон"
+
+#: admin/class-cncb-admin.php
+msgid "Same as main"
+msgstr "Как основной"
+
+#: admin/class-cncb-admin.php
+msgid "FAB"
+msgstr "Плавающая кнопка"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on mobile devices."
+msgstr "Переопределить шаблон на мобильных устройствах."
+
+#: admin/class-cncb-admin.php
+msgid "Desktop Template"
+msgstr "Шаблон для компьютеров"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on desktop devices."
+msgstr "Переопределить шаблон на настольных устройствах."
+
+#: admin/class-cncb-admin.php
+msgid "Bar Design"
+msgstr "Дизайн панели"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Background Color"
+msgstr "Цвет фона панели"
+
+#: admin/class-cncb-admin.php
+msgid "Background Opacity"
+msgstr "Прозрачность фона"
+
+#: admin/class-cncb-admin.php
+msgid "Button Border Radius"
+msgstr "Скругление углов кнопки"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Padding"
+msgstr "Внутренний отступ панели"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Position"
+msgstr "Позиция панели"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom"
+msgstr "Внизу"
+
+#: admin/class-cncb-admin.php
+msgid "Top"
+msgstr "Вверху"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Margins"
+msgstr "Внешние отступы панели"
+
+#: admin/class-cncb-admin.php
+msgid "Right"
+msgstr "Справа"
+
+#: admin/class-cncb-admin.php
+msgid "Left"
+msgstr "Слева"
+
+#: admin/class-cncb-admin.php
+msgid "Animation"
+msgstr "Анимация"
+
+#: admin/class-cncb-admin.php
+msgid "None"
+msgstr "Нет"
+
+#: admin/class-cncb-admin.php
+msgid "Pulse"
+msgstr "Пульсация"
+
+#: admin/class-cncb-admin.php
+msgid "Glow"
+msgstr "Свечение"
+
+#: admin/class-cncb-admin.php
+msgid "Bounce"
+msgstr "Подпрыгивание"
+
+#: admin/class-cncb-admin.php
+msgid "Shake"
+msgstr "Встряска"
+
+#: admin/class-cncb-admin.php
+msgid "Slide Up"
+msgstr "Выезд снизу"
+
+#: admin/class-cncb-admin.php
+msgid "FAB Design"
+msgstr "Дизайн плавающей кнопки"
+
+#: admin/class-cncb-admin.php
+msgid "Position Corner"
+msgstr "Угол расположения"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Right"
+msgstr "Внизу справа"
+
+#: admin/class-cncb-admin.php
+msgid "Top Right"
+msgstr "Вверху справа"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Left"
+msgstr "Внизу слева"
+
+#: admin/class-cncb-admin.php
+msgid "Top Left"
+msgstr "Вверху слева"
+
+#: admin/class-cncb-admin.php
+msgid "Main Icon"
+msgstr "Основная иконка"
+
+#: admin/class-cncb-admin.php
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: admin/class-cncb-admin.php
+msgid "Icon / Text Color"
+msgstr "Цвет иконки / текста"
+
+#: admin/class-cncb-admin.php
+msgid "Size"
+msgstr "Размер"
+
+#: admin/class-cncb-admin.php
+msgid "Open Direction"
+msgstr "Направление раскрытия"
+
+#: admin/class-cncb-admin.php
+msgid "Up"
+msgstr "Вверх"
+
+#: admin/class-cncb-admin.php
+msgid "Open Animation"
+msgstr "Анимация раскрытия"
+
+#: admin/class-cncb-admin.php
+msgid "Fan"
+msgstr "Веер"
+
+#: admin/class-cncb-admin.php
+msgid "Slide"
+msgstr "Скольжение"
+
+#: admin/class-cncb-admin.php
+msgid "Scale"
+msgstr "Масштабирование"
+
+#: admin/class-cncb-admin.php
+msgid "Stagger"
+msgstr "Каскад"
+
+#: admin/class-cncb-admin.php
+msgid "Show Badge"
+msgstr "Показать значок"
+
+#: admin/class-cncb-admin.php
+msgid "Show a notification badge on the FAB."
+msgstr "Показывать значок уведомления на плавающей кнопке."
+
+#: admin/class-cncb-admin.php
+msgid "Show Tooltip"
+msgstr "Показать подсказку"
+
+#: admin/class-cncb-admin.php
+msgid "Show label tooltips on child buttons."
+msgstr "Показывать всплывающие подсказки на дочерних кнопках."
+
+#: admin/class-cncb-admin.php
+msgid "FAB Margins"
+msgstr "Отступы плавающей кнопки"
+
+#: admin/class-cncb-admin.php
+msgid "Page Visibility"
+msgstr "Видимость на страницах"
+
+#: admin/class-cncb-admin.php
+msgid "Visibility Mode"
+msgstr "Режим видимости"
+
+#: admin/class-cncb-admin.php
+msgid "All Pages"
+msgstr "Все страницы"
+
+#: admin/class-cncb-admin.php
+msgid "Only These Pages"
+msgstr "Только указанные страницы"
+
+#: admin/class-cncb-admin.php
+msgid "Exclude These Pages"
+msgstr "Исключить указанные страницы"
+
+#: admin/class-cncb-admin.php
+msgid "Page IDs / Slugs"
+msgstr "ID / ярлыки страниц"
+
+#: admin/class-cncb-admin.php
+msgid "Enter page IDs or slugs, one per line. Example: 42, about-us, contact"
+msgstr "Введите ID или ярлыки страниц, по одному на строку. Пример: 42, about-us, contact"
+
+#: admin/class-cncb-admin.php
+msgid "Timing & Triggers"
+msgstr "Время и условия показа"
+
+#: admin/class-cncb-admin.php
+msgid "Delay (seconds)"
+msgstr "Задержка (секунды)"
+
+#: admin/class-cncb-admin.php
+msgid "Seconds to wait before showing the CTA (0 = immediately)."
+msgstr "Количество секунд ожидания перед показом CTA (0 = сразу)."
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Percentage"
+msgstr "Процент прокрутки"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll percentage to trigger display (0 = immediately)."
+msgstr "Процент прокрутки страницы для отображения (0 = сразу)."
+
+#: admin/class-cncb-admin.php
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: admin/class-cncb-admin.php
+msgid "Enable WooCommerce Rules"
+msgstr "Включить правила WooCommerce"
+
+#: admin/class-cncb-admin.php
+msgid "When enabled, you can select which buttons appear on specific WooCommerce pages."
+msgstr "При включении вы сможете выбрать, какие кнопки отображать на определённых страницах WooCommerce."
+
+#: admin/class-cncb-admin.php
+msgid "Shop Page"
+msgstr "Страница магазина"
+
+#: admin/class-cncb-admin.php
+msgid "Product Pages"
+msgstr "Страницы товаров"
+
+#: admin/class-cncb-admin.php
+msgid "Cart Page"
+msgstr "Страница корзины"
+
+#: admin/class-cncb-admin.php
+msgid "Checkout Page"
+msgstr "Страница оформления заказа"
+
+#: admin/class-cncb-admin.php
+msgid "Select which buttons to show on this page type:"
+msgstr "Выберите, какие кнопки показывать на этом типе страниц:"
+
+#: admin/class-cncb-admin.php
+#, php-format
+msgid "Button %d"
+msgstr "Кнопка %d"
+
+#: admin/class-cncb-admin.php
+msgid "No buttons configured yet. Add buttons in the General & Buttons tab first."
+msgstr "Кнопки ещё не настроены. Сначала добавьте кнопки на вкладке «Основные и кнопки»."
+
+#: admin/class-cncb-admin.php
+msgid "Custom CSS"
+msgstr "Пользовательский CSS"
+
+#: admin/class-cncb-admin.php
+msgid "Add custom CSS rules to further style the CTA. These styles are output in a <style> tag on the front end."
+msgstr "Добавьте пользовательские CSS-правила для дополнительной стилизации CTA. Эти стили выводятся в теге <style> на сайте."
+
+#: admin/class-cncb-admin.php
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+#: admin/class-cncb-admin.php
+msgid "Live Preview"
+msgstr "Предварительный просмотр"
+
+#: admin/class-cncb-admin.php
+msgid "New Button"
+msgstr "Новая кнопка"
+
+#: admin/class-cncb-admin.php
+msgid "Label"
+msgstr "Подпись"
+
+#: admin/class-cncb-admin.php
+msgid "URL / Link"
+msgstr "URL / Ссылка"
+
+#: admin/class-cncb-admin.php
+msgid "Examples: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+msgstr "Примеры: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+
+#: admin/class-cncb-admin.php
+msgid "Icon"
+msgstr "Иконка"
+
+#: admin/class-cncb-admin.php
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: admin/class-cncb-admin.php
+msgid "Open In"
+msgstr "Открывать в"
+
+#: admin/class-cncb-admin.php
+msgid "Same Window"
+msgstr "Том же окне"
+
+#: admin/class-cncb-admin.php
+msgid "New Tab"
+msgstr "Новой вкладке"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Settings saved successfully!"
+msgstr "Настройки успешно сохранены!"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Error saving settings."
+msgstr "Ошибка сохранения настроек."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Are you sure you want to remove this button?"
+msgstr "Вы уверены, что хотите удалить эту кнопку?"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Maximum 5 buttons allowed."
+msgstr "Допускается не более 5 кнопок."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Saving..."
+msgstr "Сохранение..."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "WooCommerce is not active."
+msgstr "WooCommerce не активен."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Unauthorized"
+msgstr "Нет доступа"
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "No data received."
+msgstr "Данные не получены."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Invalid data format."
+msgstr "Неверный формат данных."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+#: admin/class-cncb-stats.php
+msgid "Click Statistics"
+msgstr "Статистика кликов"
+
+#: admin/class-cncb-stats.php
+msgid "No buttons configured yet."
+msgstr "Кнопки ещё не настроены."
+
+#: admin/class-cncb-stats.php
+msgid "Button Label"
+msgstr "Подпись кнопки"
+
+#: admin/class-cncb-stats.php
+msgid "Total Clicks"
+msgstr "Всего кликов"
+
+#: admin/class-cncb-stats.php
+msgid "Last 7 Days"
+msgstr "Последние 7 дней"
+
+#: admin/class-cncb-stats.php
+msgid "Last 30 Days"
+msgstr "Последние 30 дней"
+
+#: admin/class-cncb-stats.php
+msgid "Click Distribution"
+msgstr "Распределение кликов"
+
+#: admin/class-cncb-stats.php
+msgid "Reset Statistics"
+msgstr "Сбросить статистику"
+
+#: admin/class-cncb-stats.php
+msgid "Are you sure you want to reset all click statistics? This action cannot be undone."
+msgstr "Вы уверены, что хотите сбросить всю статистику кликов? Это действие нельзя отменить."
+
+#: admin/class-cncb-stats.php
+msgid "Resetting..."
+msgstr "Сброс..."
+
+#: admin/class-cncb-stats.php
+msgid "Statistics reset successfully."
+msgstr "Статистика успешно сброшена."
+
+#: admin/class-cncb-stats.php
+msgid "Error resetting statistics."
+msgstr "Ошибка сброса статистики."
+
+#: admin/class-cncb-stats.php (AJAX)
+msgid "Statistics reset."
+msgstr "Статистика сброшена."
+
+#: public/class-cncb-frontend.php
+msgid "Quick contact buttons"
+msgstr "Кнопки быстрой связи"
+
+#: public/class-cncb-frontend.php
+msgid "Open contact options"
+msgstr "Открыть способы связи"
+
+#: assets/svg/icons.php
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: assets/svg/icons.php
+msgid "Phone"
+msgstr "Телефон"
+
+#: assets/svg/icons.php
+msgid "Telegram"
+msgstr "Telegram"
+
+#: assets/svg/icons.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: assets/svg/icons.php
+msgid "Email"
+msgstr "Эл. почта"
+
+#: assets/svg/icons.php
+msgid "Messenger"
+msgstr "Messenger"
+
+#: assets/svg/icons.php
+msgid "SMS"
+msgstr "СМС"
+
+#: assets/svg/icons.php
+msgid "Location"
+msgstr "Местоположение"
+
+#: assets/svg/icons.php
+msgid "Link"
+msgstr "Ссылка"
+
+#: assets/svg/icons.php
+msgid "Viber"
+msgstr "Viber"
+
+#: admin/class-cncb-admin.php
+msgid "Help us improve"
+msgstr "Помогите нам улучшить"
+
+#: admin/class-cncb-admin.php
+msgid "Loving Bolt CTA Button? Your feedback shapes the next release."
+msgstr "Нравится Bolt CTA Button? Ваш отзыв формирует следующий выпуск."
+
+#: admin/class-cncb-admin.php
+msgid "Leave a Review"
+msgstr "Оставить отзыв"
+
+#: admin/class-cncb-admin.php
+msgid "Request a Feature"
+msgstr "Запросить функцию"

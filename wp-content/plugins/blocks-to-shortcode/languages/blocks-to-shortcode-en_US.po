@@ -1,0 +1,119 @@
+# Copyright (C) 2026 Plugin Envision
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blocks to Shortcode 0.13\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blocks-to-shortcode\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-13T01:47:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: blocks-to-shortcode\n"
+
+#. Plugin Name of the plugin
+#: includes/Register.php:20
+#: includes/Register.php:21
+msgid "Blocks to Shortcode"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://pluginenvision.com/plugins/blocks-to-shortcode"
+msgstr ""
+
+#. Description of the plugin
+msgid "Use gutenberg blocks in anywhere using blocks to shortcode."
+msgstr ""
+
+#. Author of the plugin
+msgid "Plugin Envision"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://pluginenvision.com"
+msgstr ""
+
+#: includes/Register.php:22
+msgid "Create Shortcode"
+msgstr ""
+
+#: includes/Register.php:23
+msgid "Create New Shortcode"
+msgstr ""
+
+#: includes/Register.php:24
+msgid "Edit Shortcode"
+msgstr ""
+
+#: includes/Register.php:25
+msgid "New Shortcode"
+msgstr ""
+
+#: includes/Register.php:26
+msgid "View Shortcode"
+msgstr ""
+
+#: includes/Register.php:27
+msgid "Search Shortcode"
+msgstr ""
+
+#: includes/Register.php:28
+msgid "Sorry, we couldn't find the that you are looking for."
+msgstr ""
+
+#: includes/Register.php:152
+msgid "Shortcode"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Shortcode Selector"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "Choose your Blocks to Shortcode"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "blocks"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "to shortcode"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "convert to shortcode"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "convert blocks"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "blocks in elementor"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "blocks in templates"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "use blocks anywhere"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "customize shortcode"
+msgstr ""

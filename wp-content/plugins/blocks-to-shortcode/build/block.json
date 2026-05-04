@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "btsc/shortcode-selector",
+  "version": "0.13",
+  "title": "Shortcode Selector",
+  "description": "Choose your Blocks to Shortcode",
+  "keywords": [
+    "blocks",
+    "to shortcode",
+    "convert to shortcode",
+    "convert blocks",
+    "blocks in elementor",
+    "blocks in templates",
+    "use blocks anywhere",
+    "customize shortcode"
+  ],
+  "category": "widgets",
+  "textdomain": "blocks-to-shortcode",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "layout": {
+      "type": "object",
+      "default": {
+        "type": "constrained"
+      }
+    },
+    "id": {
+      "type": "integer"
+    },
+    "appearance": {
+      "type": "string",
+      "default": "default"
+    },
+    "advanced": {
+      "type": "object",
+      "default": {
+        "background": {
+          "normal": ""
+        }
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "layout": {
+      "allowSizingOnChildren": true
+    }
+  },
+  "example": {
+    "attributes": {},
+    "viewportWidth": 200
+  },
+  "editorScript": [
+    "file:./editor.js",
+    "aos",
+    "wp-api-request"
+  ],
+  "editorStyle": [
+    "file:./editor.css",
+    "aos"
+  ],
+  "style": "file:./script.css",
+  "render": "file:./render.php",
+  "script": "file:./script.js"
+}

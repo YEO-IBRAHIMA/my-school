@@ -1,0 +1,191 @@
+# Translation of Plugins - Drag and Drop Multiple File Upload for Contact Form 7 - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Drag and Drop Multiple File Upload for Contact Form 7 - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-08 11:27:24+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Drag and Drop Multiple File Upload for Contact Form 7 - Stable (latest release)\n"
+
+#: inc/dnd-upload-cf7.php:1371
+msgid "Disable Submit button"
+msgstr "Désactiver le bouton Envoyer."
+
+#: inc/dnd-upload-cf7.php:1367
+msgid "Disable Button"
+msgstr "Désactiver le bouton"
+
+#: inc/dnd-upload-cf7.php:1327
+msgid "Minimum File"
+msgstr "Nombre minimum de fichiers"
+
+#: inc/dnd-upload-cf7.php:1316
+msgid "Invalid file Type"
+msgstr "Type de fichier non valide"
+
+#: inc/dnd-upload-cf7.php:1312
+msgid "Files too large"
+msgstr "Fichier trop volumineux"
+
+#: inc/dnd-upload-cf7.php:1308
+msgid "Failed to Upload"
+msgstr "Échec du téléversement"
+
+#: inc/dnd-upload-cf7.php:1304
+msgid "File exceeds server limit"
+msgstr "Le fichier dépasse la limite du serveur"
+
+#: inc/dnd-upload-cf7.php:1300
+msgid "Error Message"
+msgstr "Message d’erreur"
+
+#: inc/dnd-upload-cf7.php:1287
+msgid "Drag & Drop Text"
+msgstr "Texte de la zone glisser déposer"
+
+#: inc/dnd-upload-cf7.php:1263
+msgid "Send Attachment as links?"
+msgstr "Envoyer les fichiers joints comme des liens ?"
+
+#: admin/form-generator-v1.php:55
+msgid "Insert Tag"
+msgstr "Étiquette d’insertion"
+
+#: admin/form-generator-v1.php:40
+msgid "Id attribute"
+msgstr "ID de l’attribut"
+
+#: admin/form-generator-v1.php:24 admin/form-generator-v2.php:78
+msgid "Acceptable file types"
+msgstr "Type de fichiers acceptés"
+
+#: admin/form-generator-v1.php:20 admin/form-generator-v2.php:50
+msgid "File size limit (bytes)"
+msgstr "Taille limite d’un fichier (bytes)"
+
+#: admin/form-generator-v1.php:16
+msgid "Name"
+msgstr "Nom"
+
+#: admin/form-generator-v1.php:11
+msgid "Required field"
+msgstr "Champ obligatoire"
+
+#: admin/form-generator-v1.php:7 admin/form-generator-v1.php:10
+msgid "Field type"
+msgstr "Type de champ"
+
+#: inc/dnd-upload-cf7.php:825
+msgid "https://contactform7.com/file-uploading-and-attachment/"
+msgstr "https://contactform7.com/file-uploading-and-attachment/"
+
+#: inc/dnd-upload-cf7.php:786 inc/dnd-upload-cf7.php:792
+msgid "multiple file upload"
+msgstr "Téléversement de plusieurs fichiers"
+
+#: inc/dnd-upload-cf7.php:592
+msgid "of"
+msgstr "sur"
+
+#: inc/dnd-upload-cf7.php:581
+msgid "Remove"
+msgstr "Retirer"
+
+#: inc/dnd-upload-cf7.php:580
+msgid "deleting"
+msgstr "Suppression"
+
+#: inc/dnd-upload-cf7.php:573 inc/dnd-upload-cf7.php:1296
+msgid "Browse Files"
+msgstr "Parcourir les fichiers"
+
+#: inc/dnd-upload-cf7.php:572 inc/dnd-upload-cf7.php:1292
+msgid "or"
+msgstr "ou"
+
+#: inc/dnd-upload-cf7.php:571
+msgid "Drag & Drop Files Here"
+msgstr "Glisser & déposer les fichiers ici"
+
+#: inc/dnd-upload-cf7.php:1268
+msgid "Uploader Info"
+msgstr "Information sur le téléverseur"
+
+#: inc/dnd-upload-cf7.php:253
+msgid "This field is required."
+msgstr "Ce champ est obligatoire."
+
+#: inc/dnd-upload-cf7.php:250
+msgid "Uploaded file is too large"
+msgstr "Le fichier téléversé est trop gros"
+
+#: inc/dnd-upload-cf7.php:249
+msgid "Uploading a file fails for any reason"
+msgstr "Le téléversement d’un fichier a échoué pour une raison quelconque"
+
+#: inc/dnd-upload-cf7.php:248
+msgid "The uploaded file exceeds the maximum upload size of your server."
+msgstr "La taille du fichier téléversé dépasse la taille maximum de téléversement de votre serveur."
+
+#. Author URI of the plugin
+#: drag-n-drop-upload-cf7.php
+msgid "http://codedropz.com"
+msgstr "http://codedropz.com"
+
+#. Author of the plugin
+#: drag-n-drop-upload-cf7.php
+msgid "Glen Don L. Mongaya"
+msgstr "Glen Don L. Mongaya"
+
+#. Description of the plugin
+#: drag-n-drop-upload-cf7.php
+msgid "This simple plugin create Drag & Drop or choose Multiple File upload in your Confact Form 7 Forms."
+msgstr "Cette extension simple crée un glisser-déposer ou un choix de téléversement de fichiers multiples dans vos formulaires Confact Form 7."
+
+#: inc/dnd-upload-cf7.php:825
+msgid "File Uploading and Attachment"
+msgstr "Téléversement de fichier et fichier joint"
+
+#: inc/dnd-upload-cf7.php:1320
+msgid "Max File Limit"
+msgstr "Nombre maximum de fichiers"
+
+#: admin/form-generator-v1.php:59
+msgid "To attach the file uploaded through this field to mail, you need to insert the corresponding mail-tag (%s) into the File Attachments field on the Mail tab."
+msgstr "Pour joindre, via ce champ, le fichier téléversé au courrier, vous devez insérer la balise d’e-mail correspondante (%s) dans le champ des fichiers joints de l’onglet e-mail."
+
+#: admin/form-generator-v1.php:44
+msgid "Class attribute"
+msgstr "Classe de l’attribut"
+
+#: admin/form-generator-v1.php:36
+msgid "Max file upload"
+msgstr "Nombre maximum de fichiers à téléverser"
+
+#: admin/form-generator-v1.php:32
+msgid "Minimum file upload"
+msgstr "Nombre minimum de fichiers à téléverser"
+
+#: inc/dnd-upload-cf7.php:252
+msgid "Note : Some of the files are not uploaded ( Only %count% files allowed )"
+msgstr "Remarque : certains de ces fichiers n’ont pas été téléversés (uniquement %count% fichiers sont autorisés)"
+
+#: inc/dnd-upload-cf7.php:251
+msgid "Uploaded file is not allowed for file type"
+msgstr "Le téléversement de ce type de fichier n’est pas autorisé"
+
+#: inc/dnd-upload-cf7.php:1295
+msgid "Browse Text"
+msgstr "Texte de navigation dans les fichiers"
+
+#: inc/dnd-upload-cf7.php:824
+msgid "Generate a form-tag for a file uploading field. For more details, see %s."
+msgstr "Générer une balise de formulaire pour un champ de téléversement de fichier. Pour plus de détails, voir %s."
+
+#: inc/dnd-upload-cf7.php:1272
+msgid "Heading Tag"
+msgstr "Balise de titre"

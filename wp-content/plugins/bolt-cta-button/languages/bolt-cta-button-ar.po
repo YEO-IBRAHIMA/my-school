@@ -1,0 +1,618 @@
+# Arabic translation for Bolt CTA Button
+# Copyright (C) 2024-2026 Developer Starter flavor
+# This file is distributed under the same license as the Bolt CTA Button plugin.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Bolt CTA Button 2.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-03 00:00+0000\n"
+"PO-Revision-Date: 2026-04-03 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: bolt-cta-button.php
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button"
+msgstr "شريط زر الاتصال الآن"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button Settings"
+msgstr "إعدادات شريط زر الاتصال الآن"
+
+#: admin/class-cncb-admin.php
+msgid "Turkce"
+msgstr "التركية"
+
+#: admin/class-cncb-admin.php
+msgid "English"
+msgstr "الإنجليزية"
+
+#: admin/class-cncb-admin.php
+msgid "General & Buttons"
+msgstr "عام والأزرار"
+
+#: admin/class-cncb-admin.php
+msgid "Template & Design"
+msgstr "القالب والتصميم"
+
+#: admin/class-cncb-admin.php
+msgid "Display Rules"
+msgstr "قواعد العرض"
+
+#: admin/class-cncb-admin.php
+msgid "Analytics"
+msgstr "الإحصائيات"
+
+#: admin/class-cncb-admin.php
+msgid "Advanced"
+msgstr "متقدم"
+
+#: admin/class-cncb-admin.php
+msgid "General Settings"
+msgstr "الإعدادات العامة"
+
+#: admin/class-cncb-admin.php
+msgid "Enable"
+msgstr "تفعيل"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Mobile"
+msgstr "إظهار على الهاتف المحمول"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Desktop"
+msgstr "إظهار على سطح المكتب"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Behavior"
+msgstr "سلوك التمرير"
+
+#: admin/class-cncb-admin.php
+msgid "Always Visible"
+msgstr "مرئي دائمًا"
+
+#: admin/class-cncb-admin.php
+msgid "Hide on Scroll Down"
+msgstr "إخفاء عند التمرير للأسفل"
+
+#: admin/class-cncb-admin.php
+msgid "Icon Source"
+msgstr "مصدر الأيقونة"
+
+#: admin/class-cncb-admin.php
+msgid "Built-in SVG"
+msgstr "SVG مدمج"
+
+#: admin/class-cncb-admin.php
+msgid "Font Awesome (CDN)"
+msgstr "Font Awesome (CDN)"
+
+#: admin/class-cncb-admin.php
+msgid "SVG icons have no external dependency. Font Awesome loads from CDN."
+msgstr "أيقونات SVG لا تعتمد على مصادر خارجية. يتم تحميل Font Awesome من شبكة CDN."
+
+#: admin/class-cncb-admin.php
+msgid "Buttons"
+msgstr "الأزرار"
+
+#: admin/class-cncb-admin.php
+msgid "Drag and drop to reorder buttons. Maximum 5 buttons."
+msgstr "اسحب وأفلت لإعادة ترتيب الأزرار. الحد الأقصى 5 أزرار."
+
+#: admin/class-cncb-admin.php
+msgid "+ Add Button"
+msgstr "+ إضافة زر"
+
+#: admin/class-cncb-admin.php
+msgid "Template"
+msgstr "القالب"
+
+#: admin/class-cncb-admin.php
+msgid "Choose the main layout template for your CTA."
+msgstr "اختر قالب التخطيط الرئيسي لزر الإجراء."
+
+#: admin/class-cncb-admin.php
+msgid "Bar"
+msgstr "شريط"
+
+#: admin/class-cncb-admin.php
+msgid "A full-width sticky bar with button icons."
+msgstr "شريط ثابت بعرض كامل مع أيقونات الأزرار."
+
+#: admin/class-cncb-admin.php
+msgid "Floating Action Button"
+msgstr "زر الإجراء العائم"
+
+#: admin/class-cncb-admin.php
+msgid "A circular FAB that expands to show buttons."
+msgstr "زر عائم دائري يتوسع لعرض الأزرار."
+
+#: admin/class-cncb-admin.php
+msgid "Mobile Template"
+msgstr "قالب الهاتف المحمول"
+
+#: admin/class-cncb-admin.php
+msgid "Same as main"
+msgstr "نفس القالب الرئيسي"
+
+#: admin/class-cncb-admin.php
+msgid "FAB"
+msgstr "زر عائم"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on mobile devices."
+msgstr "تجاوز القالب على أجهزة الهاتف المحمول."
+
+#: admin/class-cncb-admin.php
+msgid "Desktop Template"
+msgstr "قالب سطح المكتب"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on desktop devices."
+msgstr "تجاوز القالب على أجهزة سطح المكتب."
+
+#: admin/class-cncb-admin.php
+msgid "Bar Design"
+msgstr "تصميم الشريط"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Background Color"
+msgstr "لون خلفية الشريط"
+
+#: admin/class-cncb-admin.php
+msgid "Background Opacity"
+msgstr "شفافية الخلفية"
+
+#: admin/class-cncb-admin.php
+msgid "Button Border Radius"
+msgstr "انحناء حواف الزر"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Padding"
+msgstr "حشوة الشريط"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Position"
+msgstr "موضع الشريط"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom"
+msgstr "أسفل"
+
+#: admin/class-cncb-admin.php
+msgid "Top"
+msgstr "أعلى"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Margins"
+msgstr "هوامش الشريط"
+
+#: admin/class-cncb-admin.php
+msgid "Right"
+msgstr "يمين"
+
+#: admin/class-cncb-admin.php
+msgid "Left"
+msgstr "يسار"
+
+#: admin/class-cncb-admin.php
+msgid "Animation"
+msgstr "الحركة"
+
+#: admin/class-cncb-admin.php
+msgid "None"
+msgstr "بدون"
+
+#: admin/class-cncb-admin.php
+msgid "Pulse"
+msgstr "نبض"
+
+#: admin/class-cncb-admin.php
+msgid "Glow"
+msgstr "توهج"
+
+#: admin/class-cncb-admin.php
+msgid "Bounce"
+msgstr "ارتداد"
+
+#: admin/class-cncb-admin.php
+msgid "Shake"
+msgstr "اهتزاز"
+
+#: admin/class-cncb-admin.php
+msgid "Slide Up"
+msgstr "انزلاق للأعلى"
+
+#: admin/class-cncb-admin.php
+msgid "FAB Design"
+msgstr "تصميم الزر العائم"
+
+#: admin/class-cncb-admin.php
+msgid "Position Corner"
+msgstr "موضع الزاوية"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Right"
+msgstr "أسفل اليمين"
+
+#: admin/class-cncb-admin.php
+msgid "Top Right"
+msgstr "أعلى اليمين"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Left"
+msgstr "أسفل اليسار"
+
+#: admin/class-cncb-admin.php
+msgid "Top Left"
+msgstr "أعلى اليسار"
+
+#: admin/class-cncb-admin.php
+msgid "Main Icon"
+msgstr "الأيقونة الرئيسية"
+
+#: admin/class-cncb-admin.php
+msgid "Background Color"
+msgstr "لون الخلفية"
+
+#: admin/class-cncb-admin.php
+msgid "Icon / Text Color"
+msgstr "لون الأيقونة / النص"
+
+#: admin/class-cncb-admin.php
+msgid "Size"
+msgstr "الحجم"
+
+#: admin/class-cncb-admin.php
+msgid "Open Direction"
+msgstr "اتجاه الفتح"
+
+#: admin/class-cncb-admin.php
+msgid "Up"
+msgstr "أعلى"
+
+#: admin/class-cncb-admin.php
+msgid "Open Animation"
+msgstr "حركة الفتح"
+
+#: admin/class-cncb-admin.php
+msgid "Fan"
+msgstr "مروحة"
+
+#: admin/class-cncb-admin.php
+msgid "Slide"
+msgstr "انزلاق"
+
+#: admin/class-cncb-admin.php
+msgid "Scale"
+msgstr "تكبير"
+
+#: admin/class-cncb-admin.php
+msgid "Stagger"
+msgstr "تتابع"
+
+#: admin/class-cncb-admin.php
+msgid "Show Badge"
+msgstr "إظهار الشارة"
+
+#: admin/class-cncb-admin.php
+msgid "Show a notification badge on the FAB."
+msgstr "إظهار شارة إشعار على الزر العائم."
+
+#: admin/class-cncb-admin.php
+msgid "Show Tooltip"
+msgstr "إظهار التلميح"
+
+#: admin/class-cncb-admin.php
+msgid "Show label tooltips on child buttons."
+msgstr "إظهار تلميحات التسمية على الأزرار الفرعية."
+
+#: admin/class-cncb-admin.php
+msgid "FAB Margins"
+msgstr "هوامش الزر العائم"
+
+#: admin/class-cncb-admin.php
+msgid "Page Visibility"
+msgstr "ظهور الصفحة"
+
+#: admin/class-cncb-admin.php
+msgid "Visibility Mode"
+msgstr "وضع الظهور"
+
+#: admin/class-cncb-admin.php
+msgid "All Pages"
+msgstr "جميع الصفحات"
+
+#: admin/class-cncb-admin.php
+msgid "Only These Pages"
+msgstr "هذه الصفحات فقط"
+
+#: admin/class-cncb-admin.php
+msgid "Exclude These Pages"
+msgstr "استثناء هذه الصفحات"
+
+#: admin/class-cncb-admin.php
+msgid "Page IDs / Slugs"
+msgstr "معرّفات / روابط الصفحات"
+
+#: admin/class-cncb-admin.php
+msgid "Enter page IDs or slugs, one per line. Example: 42, about-us, contact"
+msgstr "أدخل معرّفات أو روابط الصفحات، واحد في كل سطر. مثال: 42, about-us, contact"
+
+#: admin/class-cncb-admin.php
+msgid "Timing & Triggers"
+msgstr "التوقيت والمحفّزات"
+
+#: admin/class-cncb-admin.php
+msgid "Delay (seconds)"
+msgstr "التأخير (بالثواني)"
+
+#: admin/class-cncb-admin.php
+msgid "Seconds to wait before showing the CTA (0 = immediately)."
+msgstr "عدد الثواني قبل إظهار زر الإجراء (0 = فورًا)."
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Percentage"
+msgstr "نسبة التمرير"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll percentage to trigger display (0 = immediately)."
+msgstr "نسبة التمرير لتفعيل العرض (0 = فورًا)."
+
+#: admin/class-cncb-admin.php
+msgid "WooCommerce"
+msgstr "ووكومرس"
+
+#: admin/class-cncb-admin.php
+msgid "Enable WooCommerce Rules"
+msgstr "تفعيل قواعد ووكومرس"
+
+#: admin/class-cncb-admin.php
+msgid "When enabled, you can select which buttons appear on specific WooCommerce pages."
+msgstr "عند التفعيل، يمكنك اختيار الأزرار التي تظهر في صفحات ووكومرس المحددة."
+
+#: admin/class-cncb-admin.php
+msgid "Shop Page"
+msgstr "صفحة المتجر"
+
+#: admin/class-cncb-admin.php
+msgid "Product Pages"
+msgstr "صفحات المنتجات"
+
+#: admin/class-cncb-admin.php
+msgid "Cart Page"
+msgstr "صفحة سلة التسوق"
+
+#: admin/class-cncb-admin.php
+msgid "Checkout Page"
+msgstr "صفحة الدفع"
+
+#: admin/class-cncb-admin.php
+msgid "Select which buttons to show on this page type:"
+msgstr "اختر الأزرار التي تريد إظهارها في هذا النوع من الصفحات:"
+
+#: admin/class-cncb-admin.php
+#, php-format
+msgid "Button %d"
+msgstr "الزر %d"
+
+#: admin/class-cncb-admin.php
+msgid "No buttons configured yet. Add buttons in the General & Buttons tab first."
+msgstr "لم يتم إعداد أي أزرار بعد. أضف الأزرار في تبويب عام والأزرار أولاً."
+
+#: admin/class-cncb-admin.php
+msgid "Custom CSS"
+msgstr "CSS مخصص"
+
+#: admin/class-cncb-admin.php
+msgid "Add custom CSS rules to further style the CTA. These styles are output in a <style> tag on the front end."
+msgstr "أضف قواعد CSS مخصصة لتنسيق زر الإجراء. يتم إخراج هذه الأنماط في وسم <style> في الواجهة الأمامية."
+
+#: admin/class-cncb-admin.php
+msgid "Save Settings"
+msgstr "حفظ الإعدادات"
+
+#: admin/class-cncb-admin.php
+msgid "Live Preview"
+msgstr "معاينة مباشرة"
+
+#: admin/class-cncb-admin.php
+msgid "New Button"
+msgstr "زر جديد"
+
+#: admin/class-cncb-admin.php
+msgid "Label"
+msgstr "التسمية"
+
+#: admin/class-cncb-admin.php
+msgid "URL / Link"
+msgstr "الرابط / URL"
+
+#: admin/class-cncb-admin.php
+msgid "Examples: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+msgstr "أمثلة: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+
+#: admin/class-cncb-admin.php
+msgid "Icon"
+msgstr "الأيقونة"
+
+#: admin/class-cncb-admin.php
+msgid "Text Color"
+msgstr "لون النص"
+
+#: admin/class-cncb-admin.php
+msgid "Open In"
+msgstr "فتح في"
+
+#: admin/class-cncb-admin.php
+msgid "Same Window"
+msgstr "نفس النافذة"
+
+#: admin/class-cncb-admin.php
+msgid "New Tab"
+msgstr "تبويب جديد"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Settings saved successfully!"
+msgstr "تم حفظ الإعدادات بنجاح!"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Error saving settings."
+msgstr "خطأ في حفظ الإعدادات."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Are you sure you want to remove this button?"
+msgstr "هل أنت متأكد من حذف هذا الزر؟"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Maximum 5 buttons allowed."
+msgstr "الحد الأقصى المسموح به 5 أزرار."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Saving..."
+msgstr "جارٍ الحفظ..."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "WooCommerce is not active."
+msgstr "ووكومرس غير مفعّل."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Unauthorized"
+msgstr "غير مصرّح"
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "No data received."
+msgstr "لم يتم استلام أي بيانات."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Invalid data format."
+msgstr "تنسيق البيانات غير صالح."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Settings saved."
+msgstr "تم حفظ الإعدادات."
+
+#: admin/class-cncb-stats.php
+msgid "Click Statistics"
+msgstr "إحصائيات النقرات"
+
+#: admin/class-cncb-stats.php
+msgid "No buttons configured yet."
+msgstr "لم يتم إعداد أي أزرار بعد."
+
+#: admin/class-cncb-stats.php
+msgid "Button Label"
+msgstr "تسمية الزر"
+
+#: admin/class-cncb-stats.php
+msgid "Total Clicks"
+msgstr "إجمالي النقرات"
+
+#: admin/class-cncb-stats.php
+msgid "Last 7 Days"
+msgstr "آخر 7 أيام"
+
+#: admin/class-cncb-stats.php
+msgid "Last 30 Days"
+msgstr "آخر 30 يومًا"
+
+#: admin/class-cncb-stats.php
+msgid "Click Distribution"
+msgstr "توزيع النقرات"
+
+#: admin/class-cncb-stats.php
+msgid "Reset Statistics"
+msgstr "إعادة تعيين الإحصائيات"
+
+#: admin/class-cncb-stats.php
+msgid "Are you sure you want to reset all click statistics? This action cannot be undone."
+msgstr "هل أنت متأكد من إعادة تعيين جميع إحصائيات النقرات؟ لا يمكن التراجع عن هذا الإجراء."
+
+#: admin/class-cncb-stats.php
+msgid "Resetting..."
+msgstr "جارٍ إعادة التعيين..."
+
+#: admin/class-cncb-stats.php
+msgid "Statistics reset successfully."
+msgstr "تمت إعادة تعيين الإحصائيات بنجاح."
+
+#: admin/class-cncb-stats.php
+msgid "Error resetting statistics."
+msgstr "خطأ في إعادة تعيين الإحصائيات."
+
+#: admin/class-cncb-stats.php (AJAX)
+msgid "Statistics reset."
+msgstr "تمت إعادة تعيين الإحصائيات."
+
+#: public/class-cncb-frontend.php
+msgid "Quick contact buttons"
+msgstr "أزرار الاتصال السريع"
+
+#: public/class-cncb-frontend.php
+msgid "Open contact options"
+msgstr "فتح خيارات الاتصال"
+
+#: assets/svg/icons.php
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#: assets/svg/icons.php
+msgid "Phone"
+msgstr "هاتف"
+
+#: assets/svg/icons.php
+msgid "Telegram"
+msgstr "تيليجرام"
+
+#: assets/svg/icons.php
+msgid "Instagram"
+msgstr "إنستغرام"
+
+#: assets/svg/icons.php
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+#: assets/svg/icons.php
+msgid "Messenger"
+msgstr "ماسنجر"
+
+#: assets/svg/icons.php
+msgid "SMS"
+msgstr "رسالة نصية"
+
+#: assets/svg/icons.php
+msgid "Location"
+msgstr "الموقع"
+
+#: assets/svg/icons.php
+msgid "Link"
+msgstr "رابط"
+
+#: assets/svg/icons.php
+msgid "Viber"
+msgstr "فايبر"
+
+#: admin/class-cncb-admin.php
+msgid "Help us improve"
+msgstr "ساعدنا في التحسين"
+
+#: admin/class-cncb-admin.php
+msgid "Loving Bolt CTA Button? Your feedback shapes the next release."
+msgstr "هل تحب Bolt CTA Button؟ ملاحظاتك تشكل الإصدار التالي."
+
+#: admin/class-cncb-admin.php
+msgid "Leave a Review"
+msgstr "اترك مراجعة"
+
+#: admin/class-cncb-admin.php
+msgid "Request a Feature"
+msgstr "طلب ميزة"

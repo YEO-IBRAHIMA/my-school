@@ -1,0 +1,618 @@
+# Turkish translation for Bolt CTA Button
+# Copyright (C) 2024-2026 Developer Starter flavor
+# This file is distributed under the same license as the Bolt CTA Button plugin.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Bolt CTA Button 2.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-03 00:00+0000\n"
+"PO-Revision-Date: 2026-04-03 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bolt-cta-button.php
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button"
+msgstr "Bolt CTA Button"
+
+#: admin/class-cncb-admin.php
+msgid "Bolt CTA Button Settings"
+msgstr "Bolt CTA Button Ayarları"
+
+#: admin/class-cncb-admin.php
+msgid "Turkce"
+msgstr "Türkçe"
+
+#: admin/class-cncb-admin.php
+msgid "English"
+msgstr "İngilizce"
+
+#: admin/class-cncb-admin.php
+msgid "General & Buttons"
+msgstr "Genel ve Butonlar"
+
+#: admin/class-cncb-admin.php
+msgid "Template & Design"
+msgstr "Şablon ve Tasarım"
+
+#: admin/class-cncb-admin.php
+msgid "Display Rules"
+msgstr "Görüntüleme Kuralları"
+
+#: admin/class-cncb-admin.php
+msgid "Analytics"
+msgstr "Analitik"
+
+#: admin/class-cncb-admin.php
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: admin/class-cncb-admin.php
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: admin/class-cncb-admin.php
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Mobile"
+msgstr "Mobilde Göster"
+
+#: admin/class-cncb-admin.php
+msgid "Show on Desktop"
+msgstr "Masaüstünde Göster"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Behavior"
+msgstr "Kaydırma Davranışı"
+
+#: admin/class-cncb-admin.php
+msgid "Always Visible"
+msgstr "Her Zaman Görünür"
+
+#: admin/class-cncb-admin.php
+msgid "Hide on Scroll Down"
+msgstr "Aşağı Kaydırınca Gizle"
+
+#: admin/class-cncb-admin.php
+msgid "Icon Source"
+msgstr "İkon Kaynağı"
+
+#: admin/class-cncb-admin.php
+msgid "Built-in SVG"
+msgstr "Dahili SVG"
+
+#: admin/class-cncb-admin.php
+msgid "Font Awesome (CDN)"
+msgstr "Font Awesome (CDN)"
+
+#: admin/class-cncb-admin.php
+msgid "SVG icons have no external dependency. Font Awesome loads from CDN."
+msgstr "SVG ikonların harici bağımlılığı yoktur. Font Awesome CDN'den yüklenir."
+
+#: admin/class-cncb-admin.php
+msgid "Buttons"
+msgstr "Butonlar"
+
+#: admin/class-cncb-admin.php
+msgid "Drag and drop to reorder buttons. Maximum 5 buttons."
+msgstr "Butonları sıralamak için sürükle bırak yapın. Maksimum 5 buton."
+
+#: admin/class-cncb-admin.php
+msgid "+ Add Button"
+msgstr "+ Buton Ekle"
+
+#: admin/class-cncb-admin.php
+msgid "Template"
+msgstr "Şablon"
+
+#: admin/class-cncb-admin.php
+msgid "Choose the main layout template for your CTA."
+msgstr "CTA'nız için ana yerleşim şablonunu seçin."
+
+#: admin/class-cncb-admin.php
+msgid "Bar"
+msgstr "Bar"
+
+#: admin/class-cncb-admin.php
+msgid "A full-width sticky bar with button icons."
+msgstr "Buton ikonlarıyla tam genişlikte sabit bar."
+
+#: admin/class-cncb-admin.php
+msgid "Floating Action Button"
+msgstr "Yüzen Aksiyon Butonu"
+
+#: admin/class-cncb-admin.php
+msgid "A circular FAB that expands to show buttons."
+msgstr "Butonları göstermek için genişleyen dairesel FAB."
+
+#: admin/class-cncb-admin.php
+msgid "Mobile Template"
+msgstr "Mobil Şablon"
+
+#: admin/class-cncb-admin.php
+msgid "Same as main"
+msgstr "Ana şablonla aynı"
+
+#: admin/class-cncb-admin.php
+msgid "FAB"
+msgstr "FAB"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on mobile devices."
+msgstr "Mobil cihazlarda şablonu geçersiz kıl."
+
+#: admin/class-cncb-admin.php
+msgid "Desktop Template"
+msgstr "Masaüstü Şablon"
+
+#: admin/class-cncb-admin.php
+msgid "Override the template on desktop devices."
+msgstr "Masaüstü cihazlarda şablonu geçersiz kıl."
+
+#: admin/class-cncb-admin.php
+msgid "Bar Design"
+msgstr "Bar Tasarımı"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Background Color"
+msgstr "Bar Arka Plan Rengi"
+
+#: admin/class-cncb-admin.php
+msgid "Background Opacity"
+msgstr "Arka Plan Şeffaflığı"
+
+#: admin/class-cncb-admin.php
+msgid "Button Border Radius"
+msgstr "Buton Köşe Yuvarlaklığı"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Padding"
+msgstr "Bar İç Boşluğu"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Position"
+msgstr "Bar Konumu"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom"
+msgstr "Alt"
+
+#: admin/class-cncb-admin.php
+msgid "Top"
+msgstr "Üst"
+
+#: admin/class-cncb-admin.php
+msgid "Bar Margins"
+msgstr "Bar Kenar Boşlukları"
+
+#: admin/class-cncb-admin.php
+msgid "Right"
+msgstr "Sağ"
+
+#: admin/class-cncb-admin.php
+msgid "Left"
+msgstr "Sol"
+
+#: admin/class-cncb-admin.php
+msgid "Animation"
+msgstr "Animasyon"
+
+#: admin/class-cncb-admin.php
+msgid "None"
+msgstr "Yok"
+
+#: admin/class-cncb-admin.php
+msgid "Pulse"
+msgstr "Nabız"
+
+#: admin/class-cncb-admin.php
+msgid "Glow"
+msgstr "Parlama"
+
+#: admin/class-cncb-admin.php
+msgid "Bounce"
+msgstr "Zıplama"
+
+#: admin/class-cncb-admin.php
+msgid "Shake"
+msgstr "Titreme"
+
+#: admin/class-cncb-admin.php
+msgid "Slide Up"
+msgstr "Yukarı Kayma"
+
+#: admin/class-cncb-admin.php
+msgid "FAB Design"
+msgstr "FAB Tasarımı"
+
+#: admin/class-cncb-admin.php
+msgid "Position Corner"
+msgstr "Konum Köşesi"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Right"
+msgstr "Sağ Alt"
+
+#: admin/class-cncb-admin.php
+msgid "Top Right"
+msgstr "Sağ Üst"
+
+#: admin/class-cncb-admin.php
+msgid "Bottom Left"
+msgstr "Sol Alt"
+
+#: admin/class-cncb-admin.php
+msgid "Top Left"
+msgstr "Sol Üst"
+
+#: admin/class-cncb-admin.php
+msgid "Main Icon"
+msgstr "Ana İkon"
+
+#: admin/class-cncb-admin.php
+msgid "Background Color"
+msgstr "Arka Plan Rengi"
+
+#: admin/class-cncb-admin.php
+msgid "Icon / Text Color"
+msgstr "İkon / Yazı Rengi"
+
+#: admin/class-cncb-admin.php
+msgid "Size"
+msgstr "Boyut"
+
+#: admin/class-cncb-admin.php
+msgid "Open Direction"
+msgstr "Açılma Yönü"
+
+#: admin/class-cncb-admin.php
+msgid "Up"
+msgstr "Yukarı"
+
+#: admin/class-cncb-admin.php
+msgid "Open Animation"
+msgstr "Açılma Animasyonu"
+
+#: admin/class-cncb-admin.php
+msgid "Fan"
+msgstr "Yelpaze"
+
+#: admin/class-cncb-admin.php
+msgid "Slide"
+msgstr "Kayma"
+
+#: admin/class-cncb-admin.php
+msgid "Scale"
+msgstr "Büyütme"
+
+#: admin/class-cncb-admin.php
+msgid "Stagger"
+msgstr "Kademeli"
+
+#: admin/class-cncb-admin.php
+msgid "Show Badge"
+msgstr "Rozet Göster"
+
+#: admin/class-cncb-admin.php
+msgid "Show a notification badge on the FAB."
+msgstr "FAB üzerinde bildirim rozeti göster."
+
+#: admin/class-cncb-admin.php
+msgid "Show Tooltip"
+msgstr "İpucu Göster"
+
+#: admin/class-cncb-admin.php
+msgid "Show label tooltips on child buttons."
+msgstr "Alt butonlarda etiket ipuçlarını göster."
+
+#: admin/class-cncb-admin.php
+msgid "FAB Margins"
+msgstr "FAB Kenar Boşlukları"
+
+#: admin/class-cncb-admin.php
+msgid "Page Visibility"
+msgstr "Sayfa Görünürlüğü"
+
+#: admin/class-cncb-admin.php
+msgid "Visibility Mode"
+msgstr "Görünürlük Modu"
+
+#: admin/class-cncb-admin.php
+msgid "All Pages"
+msgstr "Tüm Sayfalar"
+
+#: admin/class-cncb-admin.php
+msgid "Only These Pages"
+msgstr "Sadece Bu Sayfalar"
+
+#: admin/class-cncb-admin.php
+msgid "Exclude These Pages"
+msgstr "Bu Sayfalar Hariç"
+
+#: admin/class-cncb-admin.php
+msgid "Page IDs / Slugs"
+msgstr "Sayfa ID'leri / Slug'ları"
+
+#: admin/class-cncb-admin.php
+msgid "Enter page IDs or slugs, one per line. Example: 42, about-us, contact"
+msgstr "Sayfa ID veya slug girin, her satıra bir tane. Örnek: 42, hakkimizda, iletisim"
+
+#: admin/class-cncb-admin.php
+msgid "Timing & Triggers"
+msgstr "Zamanlama ve Tetikleyiciler"
+
+#: admin/class-cncb-admin.php
+msgid "Delay (seconds)"
+msgstr "Gecikme (saniye)"
+
+#: admin/class-cncb-admin.php
+msgid "Seconds to wait before showing the CTA (0 = immediately)."
+msgstr "CTA gösterilmeden önce beklenecek süre (0 = hemen)."
+
+#: admin/class-cncb-admin.php
+msgid "Scroll Percentage"
+msgstr "Kaydırma Yüzdesi"
+
+#: admin/class-cncb-admin.php
+msgid "Scroll percentage to trigger display (0 = immediately)."
+msgstr "Görüntülemeyi tetiklemek için kaydırma yüzdesi (0 = hemen)."
+
+#: admin/class-cncb-admin.php
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: admin/class-cncb-admin.php
+msgid "Enable WooCommerce Rules"
+msgstr "WooCommerce Kurallarını Etkinleştir"
+
+#: admin/class-cncb-admin.php
+msgid "When enabled, you can select which buttons appear on specific WooCommerce pages."
+msgstr "Etkinleştirildiğinde, belirli WooCommerce sayfalarında hangi butonların görüneceğini seçebilirsiniz."
+
+#: admin/class-cncb-admin.php
+msgid "Shop Page"
+msgstr "Mağaza Sayfası"
+
+#: admin/class-cncb-admin.php
+msgid "Product Pages"
+msgstr "Ürün Sayfaları"
+
+#: admin/class-cncb-admin.php
+msgid "Cart Page"
+msgstr "Sepet Sayfası"
+
+#: admin/class-cncb-admin.php
+msgid "Checkout Page"
+msgstr "Ödeme Sayfası"
+
+#: admin/class-cncb-admin.php
+msgid "Select which buttons to show on this page type:"
+msgstr "Bu sayfa türünde gösterilecek butonları seçin:"
+
+#: admin/class-cncb-admin.php
+#, php-format
+msgid "Button %d"
+msgstr "Buton %d"
+
+#: admin/class-cncb-admin.php
+msgid "No buttons configured yet. Add buttons in the General & Buttons tab first."
+msgstr "Henüz buton yapılandırılmadı. Önce Genel ve Butonlar sekmesinden buton ekleyin."
+
+#: admin/class-cncb-admin.php
+msgid "Custom CSS"
+msgstr "Özel CSS"
+
+#: admin/class-cncb-admin.php
+msgid "Add custom CSS rules to further style the CTA. These styles are output in a <style> tag on the front end."
+msgstr "CTA'yı daha fazla özelleştirmek için CSS kuralları ekleyin. Bu stiller ön yüzde bir <style> etiketinde çıktılanır."
+
+#: admin/class-cncb-admin.php
+msgid "Save Settings"
+msgstr "Ayarları Kaydet"
+
+#: admin/class-cncb-admin.php
+msgid "Live Preview"
+msgstr "Canlı Önizleme"
+
+#: admin/class-cncb-admin.php
+msgid "New Button"
+msgstr "Yeni Buton"
+
+#: admin/class-cncb-admin.php
+msgid "Label"
+msgstr "Etiket"
+
+#: admin/class-cncb-admin.php
+msgid "URL / Link"
+msgstr "URL / Link"
+
+#: admin/class-cncb-admin.php
+msgid "Examples: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+msgstr "Örnekler: tel:+905551234567, https://wa.me/905551234567, mailto:info@site.com"
+
+#: admin/class-cncb-admin.php
+msgid "Icon"
+msgstr "İkon"
+
+#: admin/class-cncb-admin.php
+msgid "Text Color"
+msgstr "Yazı Rengi"
+
+#: admin/class-cncb-admin.php
+msgid "Open In"
+msgstr "Açılış Şekli"
+
+#: admin/class-cncb-admin.php
+msgid "Same Window"
+msgstr "Aynı Pencere"
+
+#: admin/class-cncb-admin.php
+msgid "New Tab"
+msgstr "Yeni Sekme"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Settings saved successfully!"
+msgstr "Ayarlar başarıyla kaydedildi!"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Error saving settings."
+msgstr "Ayarlar kaydedilirken hata oluştu."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Are you sure you want to remove this button?"
+msgstr "Bu butonu silmek istediğinize emin misiniz?"
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Maximum 5 buttons allowed."
+msgstr "Maksimum 5 buton eklenebilir."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "Saving..."
+msgstr "Kaydediliyor..."
+
+#: admin/class-cncb-admin.php (localized JS strings)
+msgid "WooCommerce is not active."
+msgstr "WooCommerce aktif değil."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Unauthorized"
+msgstr "Yetkisiz"
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "No data received."
+msgstr "Veri alınamadı."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Invalid data format."
+msgstr "Geçersiz veri formatı."
+
+#: admin/class-cncb-admin.php (AJAX)
+msgid "Settings saved."
+msgstr "Ayarlar kaydedildi."
+
+#: admin/class-cncb-stats.php
+msgid "Click Statistics"
+msgstr "Tıklama İstatistikleri"
+
+#: admin/class-cncb-stats.php
+msgid "No buttons configured yet."
+msgstr "Henüz buton yapılandırılmadı."
+
+#: admin/class-cncb-stats.php
+msgid "Button Label"
+msgstr "Buton Etiketi"
+
+#: admin/class-cncb-stats.php
+msgid "Total Clicks"
+msgstr "Toplam Tıklama"
+
+#: admin/class-cncb-stats.php
+msgid "Last 7 Days"
+msgstr "Son 7 Gün"
+
+#: admin/class-cncb-stats.php
+msgid "Last 30 Days"
+msgstr "Son 30 Gün"
+
+#: admin/class-cncb-stats.php
+msgid "Click Distribution"
+msgstr "Tıklama Dağılımı"
+
+#: admin/class-cncb-stats.php
+msgid "Reset Statistics"
+msgstr "İstatistikleri Sıfırla"
+
+#: admin/class-cncb-stats.php
+msgid "Are you sure you want to reset all click statistics? This action cannot be undone."
+msgstr "Tüm tıklama istatistiklerini sıfırlamak istediğinize emin misiniz? Bu işlem geri alınamaz."
+
+#: admin/class-cncb-stats.php
+msgid "Resetting..."
+msgstr "Sıfırlanıyor..."
+
+#: admin/class-cncb-stats.php
+msgid "Statistics reset successfully."
+msgstr "İstatistikler başarıyla sıfırlandı."
+
+#: admin/class-cncb-stats.php
+msgid "Error resetting statistics."
+msgstr "İstatistikler sıfırlanırken hata oluştu."
+
+#: admin/class-cncb-stats.php (AJAX)
+msgid "Statistics reset."
+msgstr "İstatistikler sıfırlandı."
+
+#: public/class-cncb-frontend.php
+msgid "Quick contact buttons"
+msgstr "Hızlı iletişim butonları"
+
+#: public/class-cncb-frontend.php
+msgid "Open contact options"
+msgstr "İletişim seçeneklerini aç"
+
+#: assets/svg/icons.php
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: assets/svg/icons.php
+msgid "Phone"
+msgstr "Telefon"
+
+#: assets/svg/icons.php
+msgid "Telegram"
+msgstr "Telegram"
+
+#: assets/svg/icons.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: assets/svg/icons.php
+msgid "Email"
+msgstr "E-posta"
+
+#: assets/svg/icons.php
+msgid "Messenger"
+msgstr "Messenger"
+
+#: assets/svg/icons.php
+msgid "SMS"
+msgstr "SMS"
+
+#: assets/svg/icons.php
+msgid "Location"
+msgstr "Konum"
+
+#: assets/svg/icons.php
+msgid "Link"
+msgstr "Bağlantı"
+
+#: assets/svg/icons.php
+msgid "Viber"
+msgstr "Viber"
+
+#: admin/class-cncb-admin.php
+msgid "Help us improve"
+msgstr "Geliştirmemize yardım edin"
+
+#: admin/class-cncb-admin.php
+msgid "Loving Bolt CTA Button? Your feedback shapes the next release."
+msgstr "Bolt CTA Button'u beğendiniz mi? Geri bildiriminiz bir sonraki sürümü şekillendirir."
+
+#: admin/class-cncb-admin.php
+msgid "Leave a Review"
+msgstr "Yorum Yaz"
+
+#: admin/class-cncb-admin.php
+msgid "Request a Feature"
+msgstr "Özellik İste"

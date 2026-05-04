@@ -1,0 +1,192 @@
+# Translation of Plugins - PDF Embedder - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - PDF Embedder - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-01-29 11:10:50+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - PDF Embedder - Stable (latest release)\n"
+
+#: src/Admin/Pages/About.php:23
+msgid "About"
+msgstr "A propos"
+
+#: src/Admin/Admin.php:171
+msgid "Proceed"
+msgstr "Exécuter"
+
+#: src/Admin/Admin.php:170
+msgid "Installing..."
+msgstr "Installation…"
+
+#: src/Admin/Admin.php:168
+msgid "Install"
+msgstr "Installation"
+
+#: src/Admin/Admin.php:167
+msgid "Status: Inactive"
+msgstr "État : inactif"
+
+#: src/Admin/Admin.php:166
+msgid "Deactivating..."
+msgstr "Désactivation…"
+
+#: src/Admin/Admin.php:164 src/Admin/Partners.php:67
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#: src/Admin/Admin.php:162
+msgid "Activating..."
+msgstr "Activation…"
+
+#: src/Admin/Admin.php:161 src/Admin/Partners.php:71
+msgid "Activate"
+msgstr "Activer"
+
+#. Description of the plugin
+#: pdf_embedder.php
+msgid "Embed PDFs straight into your posts and pages, with flexible width and height. No third-party services required. Compatible with Gutenberg Editor WordPress"
+msgstr "Embarquer des PDF directement dans vos publications, avec des dimensions flexibles. Aucun service tiers n’est nécessaire. Compatible avec l’éditeur Gutenberg pour WordPress."
+
+#: src/Admin/Pages/Mobile.php:37
+msgid "Mobile-friendly embedding using PDF Embedder Premium"
+msgstr "Intégration compatible mobile en utilisant PDF Embedder Premium"
+
+#: src/Admin/Pages/Settings.php:98 block/build/index.js:2
+msgid "Both"
+msgstr "Tous les deux"
+
+#: src/Admin/License.php:93
+msgid "Unspecified error"
+msgstr "Erreur non spécifiée"
+
+#: src/Admin/Admin.php:581 src/Admin/Pages/Settings.php:23
+msgid "Settings"
+msgstr "Réglages"
+
+#. translators: %s - URL to wp-pdf.com doc.
+#: src/Admin/Pages/Settings.php:134
+msgid "You can override these defaults for specific embeds by modifying the shortcodes - see <a href=\"%s\" target=\"_blank\">instructions</a>."
+msgstr "Vous pouvez écraser les réglages par défaut des intégrations spécifiques en modifiant les codes courts - voir les <a href=\"%s\" target=\"_blank\">instructions</a>."
+
+#: src/Admin/Pages/Settings.php:95 block/build/index.js:2
+msgid "Bottom"
+msgstr "En bas"
+
+#: src/Admin/Pages/Settings.php:64 block/build/index.js:2
+msgid "Height"
+msgstr "Hauteur"
+
+#: src/Admin/Pages/Settings.php:92 block/build/index.js:2
+msgid "Top"
+msgstr "En haut"
+
+#: src/Admin/Pages/Settings.php:88
+msgid "Toolbar Location"
+msgstr "Emplacement de la barre d’outils"
+
+#: src/Admin/Pages/Settings.php:55 block/build/index.js:2
+msgid "Width"
+msgstr "Largeur"
+
+#: src/Admin/Pages/Settings.php:50
+msgid "Default Viewer Settings"
+msgstr "Réglages par défaut de la visionneuse"
+
+#: src/Admin/Pages/Mobile.php:23 block/build/index.js:2
+msgid "Mobile"
+msgstr "Mobile"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: pdf_embedder.php src/Admin/Admin.php:122 src/Admin/Admin.php:130
+#: src/Admin/MediaLibrary.php:35 block/build/index.js:2
+msgid "PDF Embedder"
+msgstr "PDF Embedder"
+
+#. translators: %s - number of PDF files.
+#: src/Admin/MediaLibrary.php:220
+msgid "PDF <span class=\"count\">(%s)</span>"
+msgid_plural "PDFs <span class=\"count\">(%s)</span>"
+msgstr[0] "PDF <span class=\"count\">(%s)</span>"
+msgstr[1] "PDFs <span class=\"count\">(%s)</span>"
+
+#: src/Admin/MediaLibrary.php:217
+msgid "PDFs"
+msgstr "PDFs"
+
+#: src/Admin/MediaLibrary.php:218
+msgid "Manage PDFs"
+msgstr "Gérer les PDFs"
+
+#: src/Admin/Pages/Settings.php:41
+msgid "To use the plugin, just embed PDFs in the same way as you would normally embed images in your posts/pages - but try with a PDF file instead."
+msgstr "Pour utiliser l’extension, intégrez juste les PDF de la même manière que vous intégrez normalement les images dans vos articles / pages - mais essayez avec un fichier PDF à la place."
+
+#: src/Admin/Pages/Settings.php:162
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: src/Plugin.php:176 block/build/index.js:2
+msgid "View in Full Screen"
+msgstr "Voir en plein écran"
+
+#: src/Plugin.php:175
+msgid "PDF page width or height are invalid"
+msgstr "La largeur ou la hauteur de la page PDF sont non valides"
+
+#: src/Plugin.php:174
+msgid "Click here for more info"
+msgstr "Cliquez ici pour plus d’informations"
+
+#: src/Plugin.php:173
+msgid "Error: URL to the PDF file must be on exactly the same domain as the current web page."
+msgstr "Erreur : l’URL du fichier PDF doit être exactement sur le même domaine que la page web actuelle."
+
+#: src/Admin/Admin.php:121 src/Admin/Admin.php:129
+msgid "PDF Embedder settings"
+msgstr "Réglages de PDF Embedder"
+
+#: src/Plugin.php:167
+msgid "Next page"
+msgstr "Page suivante"
+
+#: src/Plugin.php:172
+msgid "Full Screen"
+msgstr "Plein écran"
+
+#: src/Plugin.php:168
+msgid "Zoom In"
+msgstr "Zoomer"
+
+#: src/Admin/Admin.php:583 src/Admin/Pages/Secure.php:23 src/Plugin.php:169
+msgid "Secure"
+msgstr "Sécuriser"
+
+#: src/Plugin.php:171
+msgid "Download PDF"
+msgstr "Télécharger le PDF"
+
+#: src/Plugin.php:170
+msgid "Zoom Out"
+msgstr "Dézoomer"
+
+#: src/Plugin.php:165 block/build/index.js:2
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/Plugin.php:166
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: src/Plugin.php:164
+msgid "Page"
+msgstr "Page"
+
+#: src/Plugin.php:163
+msgid "Loading..."
+msgstr "Chargement&hellip;"

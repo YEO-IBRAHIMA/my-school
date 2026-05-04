@@ -1,0 +1,57 @@
+:root {
+	--pev-primary-color: #1d0bbd;
+}
+
+.pevPostShortcode {
+	position: relative;
+	display: inline-block;
+}
+
+.pevPostShortcode input {
+	font-weight: bold;
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	background: var(--pev-primary-color);
+	padding: 5px 10px;
+	border: 0;
+	border-radius: 3px;
+	outline: 0;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.pevPostShortcode span {
+	width: 150px;
+	font-weight: 500;
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	background: #555;
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 8px;
+	border-radius: 6px;
+	z-index: 1;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .3s ease;
+}
+
+.pevPostShortcode span::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 #0000 #0000 #0000;
+}
+
+.pevPostShortcode:hover span {
+	visibility: visible;
+	opacity: 1;
+}

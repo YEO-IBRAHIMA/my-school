@@ -1,0 +1,4 @@
+db-data/
+wp-content/uploads/
+*.log
+.env
