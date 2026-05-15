@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MySchool — Plateforme d'apprentissage</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--surface2:#1f2937;--border:#30363d;--accent:#3b82f6;--accent2:#10b981;--gold:#f59e0b;--danger:#ef4444;--text:#e6edf3;--text2:#8b949e;--text3:#6e7681;--white:#ffffff;--radius:12px;--shadow:0 8px 32px rgba(0,0,0,0.4);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.page{display:none;}.page.active{display:block;}
+
+/* LANDING */
+#landing{min-height:100vh;background:radial-gradient(ellipse at 20% 50%,rgba(59,130,246,0.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(16,185,129,0.08) 0%,transparent 50%),var(--bg);}
+.landing-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 5%;border-bottom:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.8);}
+.logo{font-size:1.4rem;font-weight:800;color:var(--white);letter-spacing:-0.5px;}.logo span{color:var(--accent);}
+.landing-nav-btns{display:flex;gap:0.8rem;}
+.btn{padding:10px 22px;border-radius:8px;font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;border:none;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;}
+.btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border);}.btn-ghost:hover{background:var(--surface);color:var(--text);}
+.btn-primary{background:var(--accent);color:var(--white);}.btn-primary:hover{background:#2563eb;transform:translateY(-1px);box-shadow:0 4px 20px rgba(59,130,246,0.4);}
+.btn-green{background:var(--accent2);color:var(--white);}.btn-green:hover{background:#059669;}
+.btn-danger{background:var(--danger);color:var(--white);}
+.btn-sm{padding:7px 14px;font-size:0.8rem;}.btn-full{width:100%;justify-content:center;}
+.hero{text-align:center;padding:6rem 5% 4rem;display:flex;flex-direction:column;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:0.78rem;font-weight:600;letter-spacing:0.5px;margin-bottom:2rem;animation:fadeUp 0.6s ease both;}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-1px;animation:fadeUp 0.6s ease 0.1s both;}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:560px;line-height:1.8;margin-bottom:3rem;font-weight:300;animation:fadeUp 0.6s ease 0.2s both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.6s ease 0.3s both;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;padding:4rem 5%;max-width:1100px;margin:0 auto;}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:transform 0.3s,border-color 0.3s;}
+.feature-card:hover{transform:translateY(-4px);border-color:var(--accent);}
+.feature-icon{font-size:2rem;margin-bottom:1rem;}.feature-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}.feature-card p{font-size:0.85rem;color:var(--text2);line-height:1.6;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;width:90%;max-width:420px;animation:scaleIn 0.3s ease;}
+.modal h2{font-size:1.4rem;font-weight:800;margin-bottom:0.3rem;}.modal p.sub{font-size:0.85rem;color:var(--text2);margin-bottom:2rem;}
+.modal-close{float:right;background:none;border:none;color:var(--text2);font-size:1.3rem;cursor:pointer;margin-top:-0.3rem;}.modal-close:hover{color:var(--text);}
+.form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--text2);margin-bottom:0.4rem;letter-spacing:0.5px;}
+.form-group input,.form-group select{width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);}.form-group select option{background:var(--surface);}
+.divider-or{text-align:center;position:relative;margin:1.2rem 0;color:var(--text3);font-size:0.8rem;}
+.divider-or::before,.divider-or::after{content:'';position:absolute;top:50%;width:43%;height:1px;background:var(--border);}
+.divider-or::before{left:0;}.divider-or::after{right:0;}
+.social-btn{width:100%;padding:11px;border-radius:8px;font-family:'Sora',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--text);display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:0.8rem;transition:all 0.2s;}
+.social-btn:hover{background:var(--border);}
+
+/* APP */
+#app{display:none;height:100vh;flex-direction:column;}#app.active{display:flex;}
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:60px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;}
+.app-header .logo{font-size:1.2rem;}
+.header-center{flex:1;max-width:500px;margin:0 2rem;}
+.search-bar{display:flex;align-items:center;gap:0.6rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 14px;}
+.search-bar input{flex:1;background:none;border:none;color:var(--text);font-family:'Sora',sans-serif;font-size:0.9rem;outline:none;}
+.search-bar input::placeholder{color:var(--text3);}
+.search-bar button{background:var(--accent);border:none;border-radius:6px;color:var(--white);padding:5px 12px;cursor:pointer;font-size:0.8rem;font-weight:600;font-family:'Sora',sans-serif;}
+.header-right{display:flex;align-items:center;gap:1rem;}
+.user-chip{display:flex;align-items:center;gap:0.6rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:0.85rem;}
+.user-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;}
+.role-badge{font-size:0.7rem;padding:2px 8px;border-radius:20px;font-weight:600;}
+.role-student{background:rgba(59,130,246,0.2);color:var(--accent);}.role-teacher{background:rgba(16,185,129,0.2);color:var(--accent2);}.role-admin{background:rgba(245,158,11,0.2);color:var(--gold);}
+.app-body{display:flex;flex:1;overflow:hidden;}
+.sidebar{width:220px;background:var(--surface);border-right:1px solid var(--border);flex-shrink:0;display:flex;flex-direction:column;overflow-y:auto;}
+.sidebar-section{padding:1rem 0.8rem 0.5rem;}
+.sidebar-section-title{font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);padding:0 0.6rem;margin-bottom:0.4rem;}
+.sidebar-item{display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.8rem;border-radius:8px;cursor:pointer;font-size:0.85rem;color:var(--text2);transition:all 0.15s;}
+.sidebar-item:hover{background:var(--surface2);color:var(--text);}.sidebar-item.active{background:rgba(59,130,246,0.15);color:var(--accent);font-weight:600;}
+.sidebar-item .icon{font-size:1rem;width:20px;text-align:center;}
+.notif-dot{margin-left:auto;background:var(--danger);color:var(--white);font-size:0.65rem;font-weight:700;padding:1px 6px;border-radius:10px;}
+.main{flex:1;overflow-y:auto;padding:2rem;}
+.panel{display:none;}.panel.active{display:block;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;}
+.card-title{font-size:1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+
+/* DASHBOARD */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.5rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;}
+.stat-card .num{font-size:2rem;font-weight:800;margin-bottom:0.2rem;}.stat-card .lbl{font-size:0.8rem;color:var(--text2);}
+.stat-card.blue .num{color:var(--accent);}.stat-card.green .num{color:var(--accent2);}.stat-card.gold .num{color:var(--gold);}.stat-card.red .num{color:var(--danger);}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;}
+.doc-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;cursor:pointer;transition:all 0.2s;}
+.doc-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.doc-type{display:inline-block;font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:0.8rem;}
+.type-pdf{background:rgba(239,68,68,0.2);color:#f87171;}.type-img{background:rgba(16,185,129,0.2);color:var(--accent2);}
+.doc-card h4{font-size:0.9rem;font-weight:700;margin-bottom:0.3rem;}.doc-card .doc-meta{font-size:0.75rem;color:var(--text3);}.doc-card .doc-views{font-size:0.75rem;color:var(--text3);margin-top:0.5rem;}
+
+/* UPLOAD */
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:3rem 2rem;text-align:center;cursor:pointer;transition:all 0.2s;margin-bottom:1.5rem;}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:rgba(59,130,246,0.05);}
+.upload-zone .icon{font-size:3rem;margin-bottom:1rem;}.upload-zone h3{font-size:1rem;margin-bottom:0.3rem;}.upload-zone p{font-size:0.85rem;color:var(--text2);}
+#fileInput{display:none;}
+.progress-bar{background:var(--border);border-radius:4px;height:6px;overflow:hidden;margin:0.8rem 0;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;transition:width 0.3s;width:0%;}
+
+/* EXPLORE */
+.search-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1rem;}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;cursor:pointer;transition:all 0.2s;}
+.result-card:hover{border-color:var(--accent2);box-shadow:0 4px 20px rgba(16,185,129,0.1);}
+.result-card h4{font-size:0.95rem;font-weight:700;margin:0.5rem 0 0.3rem;}.result-card p{font-size:0.8rem;color:var(--text2);}
+.result-author{display:flex;align-items:center;gap:0.4rem;margin-top:0.8rem;font-size:0.78rem;color:var(--text3);}
+
+/* CHAT */
+.chat-layout{display:flex;gap:1rem;height:calc(100vh - 160px);}
+.chat-main{flex:1;display:flex;flex-direction:column;}
+.chat-sidebar-right{width:260px;display:flex;flex-direction:column;gap:1rem;}
+.chat-messages{flex:1;overflow-y:auto;padding:1rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;display:flex;flex-direction:column;gap:1rem;}
+.msg{display:flex;gap:0.8rem;animation:fadeUp 0.3s ease;}.msg.user{flex-direction:row-reverse;}
+.msg-avatar{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.8rem;}
+.msg-avatar.ai{background:linear-gradient(135deg,var(--accent),#8b5cf6);}.msg-avatar.user-av{background:linear-gradient(135deg,var(--accent2),var(--accent));}.msg-avatar.teacher{background:linear-gradient(135deg,var(--gold),#f97316);}
+.msg-bubble{max-width:70%;padding:0.8rem 1rem;border-radius:12px;font-size:0.88rem;line-height:1.6;white-space:pre-wrap;}
+.msg.ai .msg-bubble{background:var(--surface2);border:1px solid var(--border);}.msg.user .msg-bubble{background:var(--accent);color:var(--white);}.msg.teacher .msg-bubble{background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);}
+.msg-meta{font-size:0.7rem;color:var(--text3);margin-top:0.3rem;}
+.chat-input-row{display:flex;gap:0.8rem;}
+.chat-input-row input{flex:1;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.chat-input-row input:focus{border-color:var(--accent);}
+.teachers-online{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;}
+.teachers-online h4{font-size:0.85rem;font-weight:700;margin-bottom:0.8rem;}
+.teacher-online-item{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.teacher-online-item:last-child{border-bottom:none;}
+.online-dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);flex-shrink:0;}.offline-dot{background:var(--text3)!important;}
+.teacher-online-name{flex:1;font-weight:600;}.teacher-online-sub{font-size:0.72rem;color:var(--text2);}
+
+/* ADMIN */
+.table-wrap{overflow-x:auto;}table{width:100%;border-collapse:collapse;}
+th{padding:0.8rem 1rem;text-align:left;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text2);border-bottom:1px solid var(--border);}
+td{padding:0.9rem 1rem;font-size:0.85rem;border-bottom:1px solid rgba(48,54,61,0.5);}tr:hover td{background:var(--surface2);}
+.status-dot{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;padding:3px 10px;border-radius:20px;}
+.status-pending{background:rgba(245,158,11,0.15);color:var(--gold);}.status-approved{background:rgba(16,185,129,0.15);color:var(--accent2);}.status-rejected{background:rgba(239,68,68,0.15);color:var(--danger);}
+
+/* TYPING */
+.typing{display:flex;gap:4px;align-items:center;padding:4px 0;}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--text2);animation:typing 1.2s infinite;}
+.typing span:nth-child(2){animation-delay:0.2s;}.typing span:nth-child(3){animation-delay:0.4s;}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.5rem;font-size:0.88rem;z-index:9999;animation:slideIn 0.3s ease;display:flex;align-items:center;gap:0.6rem;box-shadow:var(--shadow);}
+
+/* TAG */
+.tag-chip{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:0.75rem;cursor:pointer;transition:0.2s;display:inline-block;margin:3px;}
+.tag-chip:hover{border-color:var(--accent);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95);}to{opacity:1;transform:scale(1);}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
+@keyframes typing{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+@media(max-width:768px){.sidebar{display:none;}.chat-sidebar-right{display:none;}.header-center{display:none;}.hero h1{font-size:2rem;}}
+</style>
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing" class="page active">
+  <nav class="landing-nav">
+    <div class="logo">My<span>School</span></div>
+    <div class="landing-nav-btns">
+      <button class="btn btn-ghost" onclick="openAuth('login')">Se connecter</button>
+      <button class="btn btn-primary" onclick="openAuth('register')">S'inscrire</button>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">🚀 Plateforme d'apprentissage collaborative</div>
+    <h1>Apprends, partage,<br><span class="grad">progresse ensemble</span></h1>
+    <p>Upload tes cours en PDF ou image, cherche des ressources partagées par tes pairs, et pose tes questions à notre IA ou à un enseignant en direct.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="openAuth('register')">Commencer gratuitement →</button>
+      <button class="btn btn-ghost" onclick="demoLogin()">👀 Voir la démo</button>
+    </div>
+  </div>
+  <div class="features">
+    <div class="feature-card"><div class="feature-icon">📤</div><h3>Upload de ressources</h3><p>Partage tes cours, exercices et résumés en PDF ou image. Soumis à validation avant publication.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Recherche communautaire</h3><p>Trouve instantanément des documents partagés par toute la communauté selon la matière ou le niveau.</p></div>
+    <div class="feature-card"><div class="feature-icon">🤖</div><h3>IA pédagogique</h3><p>Notre IA répond à toutes tes questions scolaires 24h/24 avec des explications claires et encourageantes.</p></div>
+    <div class="feature-card"><div class="feature-icon">👩‍🏫</div><h3>Enseignants en ligne</h3><p>Des professeurs qualifiés disponibles pour t'aider en temps réel quand tu en as besoin.</p></div>
+  </div>
+</div>
+
+<!-- AUTH -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAuth()">✕</button>
+    <div id="loginForm">
+      <h2>Bon retour 👋</h2><p class="sub">Connecte-toi à ton espace MySchool</p>
+      <button class="social-btn" onclick="socialLogin('google')">🔵 Continuer avec Google</button>
+      <button class="social-btn" onclick="socialLogin('facebook')">🔷 Continuer avec Facebook</button>
+      <div class="divider-or">ou</div>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="ton@email.com"/></div>
+      <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="••••••••"/></div>
+      <button class="btn btn-primary btn-full" style="margin-top:0.5rem" onclick="doLogin()">Se connecter</button>
+      <p style="text-align:center;margin-top:1rem;font-size:0.82rem;color:var(--text2)">Pas de compte ? <a href="#" onclick="switchAuth('register')" style="color:var(--accent)">S'inscrire</a></p>
+    </div>
+    <div id="registerForm" style="display:none">
+      <h2>Rejoins-nous 🎓</h2><p class="sub">Crée ton espace d'apprentissage</p>
+      <button class="social-btn" onclick="socialLogin('google')">🔵 S'inscrire avec Google</button>
+      <button class="social-btn" onclick="socialLogin('facebook')">🔷 S'inscrire avec Facebook</button>
+      <div class="divider-or">ou</div>
+      <div class="form-group"><label>Prénom & Nom</label><input type="text" id="regName" placeholder="Ton nom complet"/></div>
+      <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="ton@email.com"/></div>
+      <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="8 caractères minimum"/></div>
+      <div class="form-group"><label>Tu es...</label>
+        <select id="regRole"><option value="student">Élève / Étudiant</option><option value="teacher">Enseignant</option></select>
+      </div>
+      <button class="btn btn-primary btn-full" style="margin-top:0.5rem" onclick="doRegister()">Créer mon compte</button>
+      <p style="text-align:center;margin-top:1rem;font-size:0.82rem;color:var(--text2)">Déjà inscrit ? <a href="#" onclick="switchAuth('login')" style="color:var(--accent)">Se connecter</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <header class="app-header">
+    <div class="logo">My<span>School</span></div>
+    <div class="header-center">
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" id="globalSearch" placeholder="Rechercher un cours, exercice, matière..." onkeydown="if(event.key==='Enter')doSearch()"/>
+        <button onclick="doSearch()">Chercher</button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="user-chip">
+        <div class="user-avatar" id="userAvatarLetter">?</div>
+        <span id="userNameDisplay">—</span>
+        <span class="role-badge" id="userRoleBadge">—</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="doLogout()">⬅ Quitter</button>
+    </div>
+  </header>
+  <div class="app-body">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Navigation</div>
+        <div class="sidebar-item active" onclick="showPanel('dashboard',this)"><span class="icon">🏠</span> Tableau de bord</div>
+        <div class="sidebar-item" onclick="showPanel('explore',this)"><span class="icon">🔍</span> Explorer</div>
+        <div class="sidebar-item" onclick="showPanel('upload',this)"><span class="icon">📤</span> Publier</div>
+        <div class="sidebar-item" onclick="showPanel('myspace',this)"><span class="icon">📁</span> Mon espace</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Outils</div>
+        <div class="sidebar-item" onclick="showPanel('schedule',this)"><span class="icon">📅</span> Emploi du temps</div>
+        <div class="sidebar-item" onclick="showPanel('payment',this)"><span class="icon">💳</span> Abonnement</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Aide</div>
+        <div class="sidebar-item" onclick="showPanel('chat',this)"><span class="icon">🤖</span> IA & Enseignants</div>
+      </div>
+      <div class="sidebar-section" id="adminMenu" style="display:none">
+        <div class="sidebar-section-title">Admin</div>
+        <div class="sidebar-item" onclick="showPanel('admin',this)"><span class="icon">⚙️</span> Modération <span class="notif-dot" id="pendingCount">3</span></div>
+      </div>
+    </aside>
+    <main class="main">
+
+      <!-- DASHBOARD -->
+      <div class="panel active" id="panel-dashboard">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">Bonjour, <span id="dashName">—</span> 👋</h2>
+        <div class="stats-row">
+          <div class="stat-card blue"><div class="num" id="statDocs">8</div><div class="lbl">Documents disponibles</div></div>
+          <div class="stat-card green"><div class="num">1.2k</div><div class="lbl">Membres actifs</div></div>
+          <div class="stat-card gold"><div class="num" id="statMyDocs">0</div><div class="lbl">Mes publications</div></div>
+          <div class="stat-card red"><div class="num">4</div><div class="lbl">Enseignants en ligne</div></div>
+        </div>
+        <div class="card">
+          <div class="card-title">📚 Ressources récentes</div>
+          <div class="docs-grid" id="recentDocs"></div>
+        </div>
+      </div>
+
+      <!-- EXPLORER -->
+      <div class="panel" id="panel-explore">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">🔍 Explorer les ressources</h2>
+        <div class="card">
+          <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:1rem;">
+            <input type="text" id="exploreSearch" placeholder="Rechercher par titre, matière, description..." oninput="filterExplore()" style="flex:1;min-width:200px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;font-size:0.9rem;outline:none;"/>
+            <select id="filterSubject" onchange="filterExplore()" style="padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;outline:none;">
+              <option value="">Toutes les matières</option>
+              <option>Mathématiques</option><option>Sciences</option><option>Français</option>
+              <option>Histoire-Géo</option><option>Anglais</option><option>Informatique</option>
+            </select>
+            <select id="filterType" onchange="filterExplore()" style="padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;outline:none;">
+              <option value="">Tous types</option><option value="pdf">PDF</option><option value="img">Image</option>
+            </select>
+          </div>
+          <div id="exploreCount" style="font-size:0.82rem;color:var(--text2);margin-bottom:0.8rem;"></div>
+          <div class="search-results" id="exploreResults"></div>
+        </div>
+      </div>
+
+      <!-- UPLOAD -->
+      <div class="panel" id="panel-upload">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">📤 Publier une ressource</h2>
+        <div class="card">
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="handleDrop(event)">
+            <div class="icon">📁</div>
+            <h3>Clique ou glisse ton fichier ici</h3>
+            <p>PDF, JPG, PNG — Max 20 Mo</p>
+          </div>
+          <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this.files[0])"/>
+          <div id="uploadPreview" style="display:none;margin-bottom:1rem;">
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--surface2);border-radius:8px;margin-bottom:0.5rem;">
+              <span style="font-size:1.5rem" id="previewIcon">📄</span>
+              <div><div style="font-weight:600;font-size:0.9rem" id="previewName"></div><div style="font-size:0.78rem;color:var(--text2)" id="previewSize"></div></div>
+              <button onclick="cancelUpload()" style="margin-left:auto;background:none;border:none;color:var(--danger);cursor:pointer;font-size:1.1rem;">✕</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          </div>
+          <div class="form-group"><label>Titre *</label><input type="text" id="docTitle" placeholder="Ex: Cours Algèbre — Terminale"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group"><label>Matière *</label>
+              <select id="docSubject"><option value="">Choisir...</option><option>Mathématiques</option><option>Sciences</option><option>Français</option><option>Histoire-Géo</option><option>Anglais</option><option>Informatique</option><option>Autre</option></select>
+            </div>
+            <div class="form-group"><label>Niveau *</label>
+              <select id="docLevel"><option value="">Choisir...</option><option>6ème</option><option>5ème</option><option>4ème</option><option>3ème</option><option>2nde</option><option>1ère</option><option>Terminale</option><option>Université</option><option>Tous niveaux</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label>Description</label><input type="text" id="docDesc" placeholder="Brève description du contenu..."/></div>
+          <button class="btn btn-primary" onclick="submitDoc()">📨 Soumettre pour validation</button>
+          <p style="font-size:0.78rem;color:var(--text3);margin-top:0.8rem;">ℹ️ Toute publication est examinée par un administrateur avant d'être visible par tous.</p>
+        </div>
+      </div>
+
+      <!-- MON ESPACE -->
+      <div class="panel" id="panel-myspace">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">📁 Mon espace</h2>
+        <div class="card">
+          <div class="card-title">Mes publications</div>
+          <div id="myDocsList"><p style="color:var(--text2);font-size:0.9rem;">Aucune publication pour l'instant. <a href="#" onclick="showPanel('upload',null)" style="color:var(--accent)">Publier maintenant →</a></p></div>
+        </div>
+      </div>
+
+      <!-- CHAT -->
+      <div class="panel" id="panel-chat">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">🤖 Aide — IA & Enseignants</h2>
+        <div class="chat-layout">
+          <div class="chat-main">
+            <div class="chat-messages" id="chatMessages">
+              <div class="msg ai">
+                <div class="msg-avatar ai">🤖</div>
+                <div>
+                  <div class="msg-bubble">Bonjour ! Je suis l'assistant IA de MySchool 👋
+
+Pose-moi n'importe quelle question sur tes cours : mathématiques, sciences, français, histoire, anglais, informatique...
+
+Je suis là pour t'expliquer, t'aider à comprendre et te guider pas à pas ! 📚</div>
+                  <div class="msg-meta">IA MySchool • maintenant</div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-row">
+              <input type="text" id="chatInput" placeholder="Pose ta question ici... (Ex: Comment résoudre une équation du 2nd degré ?)" onkeydown="if(event.key==='Enter')sendChat()"/>
+              <button class="btn btn-primary" onclick="sendChat()">Envoyer ↗</button>
+            </div>
+          </div>
+          <div class="chat-sidebar-right">
+            <div class="teachers-online">
+              <h4>👩‍🏫 Enseignants disponibles</h4>
+              <div class="teacher-online-item"><div class="online-dot"></div><div style="flex:1"><div class="teacher-online-name">M. Koné</div><div class="teacher-online-sub">Mathématiques</div></div><button class="btn btn-sm btn-ghost" onclick="callTeacher('M. Koné','Mathématiques')">Appeler</button></div>
+              <div class="teacher-online-item"><div class="online-dot"></div><div style="flex:1"><div class="teacher-online-name">Mme Diallo</div><div class="teacher-online-sub">Sciences</div></div><button class="btn btn-sm btn-ghost" onclick="callTeacher('Mme Diallo','Sciences')">Appeler</button></div>
+              <div class="teacher-online-item"><div class="online-dot offline-dot"></div><div style="flex:1"><div class="teacher-online-name">M. Traoré</div><div class="teacher-online-sub">Français</div></div><button class="btn btn-sm btn-ghost" disabled style="opacity:0.4;cursor:not-allowed">Hors ligne</button></div>
+              <div class="teacher-online-item"><div class="online-dot"></div><div style="flex:1"><div class="teacher-online-name">Mme Bamba</div><div class="teacher-online-sub">Anglais</div></div><button class="btn btn-sm btn-ghost" onclick="callTeacher('Mme Bamba','Anglais')">Appeler</button></div>
+            </div>
+            <div class="card" style="margin-bottom:0">
+              <div style="font-size:0.8rem;font-weight:700;margin-bottom:0.8rem;">💡 Questions fréquentes</div>
+              <span class="tag-chip" onclick="quickQ('Comment résoudre une équation du second degré ?')">Équations</span>
+              <span class="tag-chip" onclick="quickQ('Explique le théorème de Pythagore')">Pythagore</span>
+              <span class="tag-chip" onclick="quickQ('Comment conjuguer au subjonctif présent ?')">Subjonctif</span>
+              <span class="tag-chip" onclick="quickQ('Qu\'est-ce que la photosynthèse ?')">Photosynthèse</span>
+              <span class="tag-chip" onclick="quickQ('Quelles sont les causes de la 1ère Guerre Mondiale ?')">1ère GM</span>
+              <span class="tag-chip" onclick="quickQ('Comment écrire une boucle en Python ?')">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADMIN -->
+      <div class="panel" id="panel-admin">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
+          <h2 style="font-size:1.4rem;">⚙️ Tableau de bord Admin</h2>
+          <button class="btn btn-primary btn-sm" onclick="loadAdminData()">🔄 Actualiser</button>
+        </div>
+
+        <!-- Stats temps réel -->
+        <div class="stats-row" style="margin-bottom:1.5rem;">
+          <div class="stat-card blue"><div class="num" id="adminStatUsers">—</div><div class="lbl">👥 Inscrits total</div></div>
+          <div class="stat-card green"><div class="num" id="adminStatDocs">—</div><div class="lbl">📄 Documents soumis</div></div>
+          <div class="stat-card gold"><div class="num" id="adminStatPayments">—</div><div class="lbl">💳 Paiements reçus</div></div>
+          <div class="stat-card red"><div class="num" id="adminStatPending">—</div><div class="lbl">⏳ En attente</div></div>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;">
+          <button class="btn btn-sm btn-primary" onclick="switchAdminTab('users',this)" id="tabUsers">👥 Inscrits</button>
+          <button class="btn btn-sm btn-ghost" onclick="switchAdminTab('docs',this)" id="tabDocs">📄 Documents</button>
+          <button class="btn btn-sm btn-ghost" onclick="switchAdminTab('payments',this)" id="tabPayments">💳 Paiements</button>
+        </div>
+
+        <!-- TAB UTILISATEURS -->
+        <div id="adminTabUsers" class="card">
+          <div class="card-title">👥 Liste des inscrits</div>
+          <div style="margin-bottom:1rem;">
+            <input type="text" id="searchUsers" placeholder="🔍 Rechercher un utilisateur..." oninput="filterAdminUsers()" style="width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Sora',sans-serif;font-size:0.9rem;outline:none;"/>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nom</th><th>Email</th><th>Rôle</th><th>Inscription</th><th>Actions</th></tr></thead>
+              <tbody id="usersTable"><tr><td colspan="5" style="text-align:center;color:var(--text2);padding:2rem;">⏳ Chargement...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB DOCUMENTS -->
+        <div id="adminTabDocs" class="card" style="display:none;">
+          <div class="card-title">📄 Tous les documents soumis</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Titre</th><th>Auteur</th><th>Matière</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead>
+              <tbody id="adminDocsTable"><tr><td colspan="6" style="text-align:center;color:var(--text2);padding:2rem;">⏳ Chargement...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB PAIEMENTS -->
+        <div id="adminTabPayments" class="card" style="display:none;">
+          <div class="card-title">💳 Historique des paiements</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Utilisateur</th><th>Plan</th><th>Montant</th><th>Méthode</th><th>Date</th><th>Statut</th></tr></thead>
+              <tbody id="adminPaymentsTable"><tr><td colspan="6" style="text-align:center;color:var(--text2);padding:2rem;">⏳ Chargement...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPLOI DU TEMPS -->
+      <div class="panel" id="panel-schedule">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">📅 Emploi du temps</h2>
+        <div class="card" style="margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem;">
+            <div style="display:flex;gap:0.5rem;">
+              <button class="btn btn-ghost btn-sm" onclick="changeWeek(-1)">← Semaine préc.</button>
+              <button class="btn btn-ghost btn-sm" onclick="changeWeek(1)">Semaine suiv. →</button>
+            </div>
+            <div id="weekLabel" style="font-weight:700;font-size:0.95rem;"></div>
+            <button class="btn btn-primary btn-sm" onclick="openAddSlot()">+ Ajouter un cours</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table id="scheduleTable" style="width:100%;border-collapse:collapse;min-width:600px;">
+              <thead>
+                <tr>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;width:80px;">Heure</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Lundi</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mardi</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Mercredi</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Jeudi</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Vendredi</th>
+                  <th style="padding:0.6rem;text-align:center;font-size:0.75rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Samedi</th>
+                </tr>
+              </thead>
+              <tbody id="scheduleBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL AJOUTER COURS -->
+      <div class="modal-overlay" id="slotModal">
+        <div class="modal">
+          <button class="modal-close" onclick="closeSlotModal()">✕</button>
+          <h2>➕ Ajouter un cours</h2>
+          <p class="sub">Planifie un cours dans ton emploi du temps</p>
+          <div class="form-group"><label>Matière *</label>
+            <select id="slotSubject">
+              <option value="">Choisir...</option>
+              <option value="Mathématiques" data-color="#3b82f6">Mathématiques</option>
+              <option value="Sciences" data-color="#10b981">Sciences</option>
+              <option value="Français" data-color="#f59e0b">Français</option>
+              <option value="Histoire-Géo" data-color="#8b5cf6">Histoire-Géo</option>
+              <option value="Anglais" data-color="#ef4444">Anglais</option>
+              <option value="Informatique" data-color="#06b6d4">Informatique</option>
+              <option value="Éducation Physique" data-color="#f97316">Éducation Physique</option>
+            </select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group"><label>Jour *</label>
+              <select id="slotDay">
+                <option value="0">Lundi</option><option value="1">Mardi</option>
+                <option value="2">Mercredi</option><option value="3">Jeudi</option>
+                <option value="4">Vendredi</option><option value="5">Samedi</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Heure *</label>
+              <select id="slotHour">
+                <option value="7">07h00</option><option value="8">08h00</option>
+                <option value="9">09h00</option><option value="10">10h00</option>
+                <option value="11">11h00</option><option value="12">12h00</option>
+                <option value="13">13h00</option><option value="14">14h00</option>
+                <option value="15">15h00</option><option value="16">16h00</option>
+                <option value="17">17h00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Enseignant (optionnel)</label><input type="text" id="slotTeacher" placeholder="Ex: M. Koné"/></div>
+          <div class="form-group"><label>Salle (optionnel)</label><input type="text" id="slotRoom" placeholder="Ex: Salle 12"/></div>
+          <button class="btn btn-primary btn-full" onclick="addSlot()">✅ Ajouter</button>
+        </div>
+      </div>
+
+      <!-- PAIEMENT -->
+      <div class="panel" id="panel-payment">
+        <h2 style="margin-bottom:1.5rem;font-size:1.4rem;">💳 Abonnement & Paiement</h2>
+
+        <!-- Statut actuel -->
+        <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border-color:rgba(59,130,246,0.3);margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+            <div style="font-size:2.5rem;">🎓</div>
+            <div style="flex:1;">
+              <div style="font-size:0.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600;">Plan actuel</div>
+              <div id="currentPlanName" style="font-size:1.3rem;font-weight:800;margin:0.2rem 0;">Gratuit</div>
+              <div id="currentPlanDesc" style="font-size:0.85rem;color:var(--text2);">Accès limité aux ressources de base</div>
+            </div>
+            <div id="currentPlanBadge" style="background:rgba(107,114,128,0.2);color:var(--text2);padding:6px 16px;border-radius:20px;font-size:0.8rem;font-weight:700;">GRATUIT</div>
+          </div>
+        </div>
+
+        <!-- Plans -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:2rem;">
+          <!-- Gratuit -->
+          <div class="card" style="border-color:var(--border);">
+            <div style="text-align:center;margin-bottom:1.2rem;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">🆓</div>
+              <div style="font-size:1.1rem;font-weight:800;">Gratuit</div>
+              <div style="font-size:2rem;font-weight:800;margin:0.5rem 0;">0 <span style="font-size:0.9rem;color:var(--text2);">FCFA/mois</span></div>
+            </div>
+            <ul style="list-style:none;font-size:0.85rem;color:var(--text2);line-height:2;margin-bottom:1.2rem;">
+              <li>✅ Accès aux ressources publiques</li>
+              <li>✅ Recherche de documents</li>
+              <li>✅ Chat IA (5 questions/jour)</li>
+              <li>❌ Upload illimité</li>
+              <li>❌ Enseignants en priorité</li>
+              <li>❌ Emploi du temps avancé</li>
+            </ul>
+            <button class="btn btn-ghost btn-full" disabled style="opacity:0.6;cursor:not-allowed;">Plan actuel</button>
+          </div>
+
+          <!-- Étudiant -->
+          <div class="card" style="border-color:var(--accent);position:relative;overflow:hidden;">
+            <div style="position:absolute;top:12px;right:12px;background:var(--accent);color:white;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;">POPULAIRE</div>
+            <div style="text-align:center;margin-bottom:1.2rem;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">📚</div>
+              <div style="font-size:1.1rem;font-weight:800;">Étudiant</div>
+              <div style="font-size:2rem;font-weight:800;margin:0.5rem 0;color:var(--accent);">2 500 <span style="font-size:0.9rem;color:var(--text2);">FCFA/mois</span></div>
+            </div>
+            <ul style="list-style:none;font-size:0.85rem;color:var(--text2);line-height:2;margin-bottom:1.2rem;">
+              <li>✅ Tout le plan Gratuit</li>
+              <li>✅ Upload illimité de ressources</li>
+              <li>✅ Chat IA illimité</li>
+              <li>✅ Enseignants disponibles 24h/7j</li>
+              <li>✅ Emploi du temps complet</li>
+              <li>❌ Cours particuliers en vidéo</li>
+            </ul>
+            <button class="btn btn-primary btn-full" onclick="selectPlan('etudiant','2 500 FCFA/mois')">Choisir ce plan</button>
+          </div>
+
+          <!-- Premium -->
+          <div class="card" style="border-color:var(--gold);">
+            <div style="text-align:center;margin-bottom:1.2rem;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">⭐</div>
+              <div style="font-size:1.1rem;font-weight:800;color:var(--gold);">Premium</div>
+              <div style="font-size:2rem;font-weight:800;margin:0.5rem 0;color:var(--gold);">5 000 <span style="font-size:0.9rem;color:var(--text2);">FCFA/mois</span></div>
+            </div>
+            <ul style="list-style:none;font-size:0.85rem;color:var(--text2);line-height:2;margin-bottom:1.2rem;">
+              <li>✅ Tout le plan Étudiant</li>
+              <li>✅ Cours particuliers en vidéo</li>
+              <li>✅ Correction personnalisée</li>
+              <li>✅ Accès aux examens blancs</li>
+              <li>✅ Certificat de réussite</li>
+              <li>✅ Support prioritaire</li>
+            </ul>
+            <button class="btn btn-full" style="background:var(--gold);color:#1a0000;font-weight:700;" onclick="selectPlan('premium','5 000 FCFA/mois')">Choisir ce plan</button>
+          </div>
+        </div>
+
+        <!-- Méthodes de paiement -->
+        <div class="card" id="paymentSection" style="display:none;">
+          <div class="card-title">💳 Méthode de paiement — <span id="selectedPlanLabel" style="color:var(--accent)"></span></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:1.5rem;">
+            <div class="pay-method" onclick="selectPayMethod(this,'Orange Money')" style="border:2px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:0.2s;">
+              <div style="font-size:2rem;">🟠</div>
+              <div style="font-weight:700;margin-top:0.4rem;">Orange Money</div>
+            </div>
+            <div class="pay-method" onclick="selectPayMethod(this,'Wave')" style="border:2px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:0.2s;">
+              <div style="font-size:2rem;">🌊</div>
+              <div style="font-weight:700;margin-top:0.4rem;">Wave</div>
+            </div>
+            <div class="pay-method" onclick="selectPayMethod(this,'MTN Mobile Money')" style="border:2px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:0.2s;">
+              <div style="font-size:2rem;">🟡</div>
+              <div style="font-weight:700;margin-top:0.4rem;">MTN MoMo</div>
+            </div>
+            <div class="pay-method" onclick="selectPayMethod(this,'Carte bancaire')" style="border:2px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:0.2s;">
+              <div style="font-size:2rem;">💳</div>
+              <div style="font-weight:700;margin-top:0.4rem;">Carte bancaire</div>
+            </div>
+          </div>
+          <div id="payDetails" style="display:none;">
+            <div class="form-group"><label>Numéro <span id="payMethodLabel"></span></label><input type="tel" id="payPhone" placeholder="Ex: 07 00 00 00 00"/></div>
+            <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;padding:1rem;margin:1rem 0;font-size:0.85rem;color:var(--text2);">
+              🔒 Paiement sécurisé. Tu recevras un code de confirmation par SMS pour valider la transaction.
+            </div>
+            <button class="btn btn-primary btn-full" onclick="confirmPayment()">🔐 Confirmer le paiement</button>
+          </div>
+        </div>
+
+        <!-- Historique -->
+        <div class="card">
+          <div class="card-title">🧾 Historique des paiements</div>
+          <div id="payHistory" style="font-size:0.85rem;color:var(--text2);">Aucun paiement enregistré.</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+let currentUser=null;
+const docs=[
+  {id:1,title:"Cours Algèbre — Terminale",subject:"Mathématiques",level:"Terminale",type:"pdf",author:"M. Koné",views:342,approved:true,desc:"Polynômes, équations du 2nd degré, fonctions"},
+  {id:2,title:"Résumé Photosynthèse",subject:"Sciences",level:"1ère",type:"pdf",author:"Mme Diallo",views:198,approved:true,desc:"Mécanisme complet avec schémas détaillés"},
+  {id:3,title:"Conjugaison — Subjonctif",subject:"Français",level:"Tous niveaux",type:"img",author:"M. Traoré",views:275,approved:true,desc:"Tableau complet des formes du subjonctif"},
+  {id:4,title:"1ère Guerre Mondiale",subject:"Histoire-Géo",level:"3ème",type:"pdf",author:"M. Coulibaly",views:156,approved:true,desc:"Causes, déroulement, traité de Versailles"},
+  {id:5,title:"Géométrie — Théorèmes",subject:"Mathématiques",level:"4ème",type:"pdf",author:"M. Koné",views:421,approved:true,desc:"Pythagore, Thalès, angles et triangles"},
+  {id:6,title:"Vocabulaire Anglais B2",subject:"Anglais",level:"Terminale",type:"img",author:"Mme Bamba",views:89,approved:true,desc:"500 mots essentiels pour le niveau B2"},
+  {id:7,title:"Introduction Python",subject:"Informatique",level:"Lycée",type:"pdf",author:"Mme Yeo",views:312,approved:true,desc:"Variables, boucles, fonctions — débutant"},
+  {id:8,title:"Chimie Organique",subject:"Sciences",level:"Terminale",type:"pdf",author:"Mme Diallo",views:234,approved:true,desc:"Alcanes, alcènes, alcools — bases"},
+];
+let myDocs=[];
+
+function openAuth(mode){document.getElementById('authModal').classList.add('open');switchAuth(mode);}
+function closeAuth(){document.getElementById('authModal').classList.remove('open');}
+function switchAuth(mode){
+  document.getElementById('loginForm').style.display=mode==='login'?'block':'none';
+  document.getElementById('registerForm').style.display=mode==='register'?'block':'none';
+}
+function socialLogin(p){loginAs({name:p==='google'?'Élève Google':'Élève Facebook',role:'student',email:p+'@demo.ci'});}
+function doLogin(){
+  const email=document.getElementById('loginEmail').value;
+  if(!email){showToast('⚠️ Entre ton email','warn');return;}
+  let role='student';
+  if(email.includes('admin'))role='admin';
+  else if(email.includes('teacher')||email.includes('prof'))role='teacher';
+  loginAs({name:email.split('@')[0],role,email});
+}
+function doRegister(){
+  const name=document.getElementById('regName').value;
+  const email=document.getElementById('regEmail').value;
+  const role=document.getElementById('regRole').value;
+  if(!name||!email){showToast('⚠️ Remplis tous les champs','warn');return;}
+  loginAs({name,role,email});
+}
+function demoLogin(){loginAs({name:'Élève Démo',role:'student',email:'demo@myschool.ci'});}
+
+function loginAs(user){
+  currentUser=user;
+  closeAuth();
+  document.getElementById('landing').classList.remove('active');
+  document.getElementById('app').style.display='flex';
+  document.getElementById('userNameDisplay').textContent=user.name.split(' ')[0];
+  document.getElementById('userAvatarLetter').textContent=user.name[0].toUpperCase();
+  document.getElementById('dashName').textContent=user.name.split(' ')[0];
+  const rb=document.getElementById('userRoleBadge');
+  const lbl={student:'Élève',teacher:'Enseignant',admin:'Admin'};
+  const cls={student:'role-student',teacher:'role-teacher',admin:'role-admin'};
+  rb.textContent=lbl[user.role]||'Élève';
+  rb.className='role-badge '+(cls[user.role]||'role-student');
+  if(user.role==='admin')document.getElementById('adminMenu').style.display='block';
+  renderDocs();renderExplore();
+  showToast('✅ Bienvenue '+user.name.split(' ')[0]+' !','ok');
+}
+function doLogout(){
+  currentUser=null;
+  document.getElementById('app').style.display='none';
+  document.getElementById('landing').classList.add('active');
+}
+
+function showPanel(name,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if(el)el.classList.add('active');
+  if(name==='myspace')renderMyDocs();
+}
+
+function docCardHTML(d){
+  return`<div class="doc-card" onclick="openDoc(${d.id})">
+    <span class="doc-type type-${d.type}">${d.type.toUpperCase()}</span>
+    <h4>${d.title}</h4>
+    <div class="doc-meta">📚 ${d.subject} • ${d.level}</div>
+    <div class="doc-meta">✍️ ${d.author}</div>
+    <div class="doc-views">👁️ ${d.views} vues</div>
+  </div>`;
+}
+function renderDocs(){
+  document.getElementById('recentDocs').innerHTML=docs.filter(d=>d.approved).slice(0,6).map(docCardHTML).join('');
+  document.getElementById('statDocs').textContent=docs.filter(d=>d.approved).length;
+}
+function openDoc(id){
+  const d=docs.find(x=>x.id===id);if(!d)return;
+  d.views++;showToast('📖 "'+d.title+'" ouvert','ok');
+}
+function renderExplore(q='',subj='',type=''){
+  const list=docs.filter(d=>{
+    if(!d.approved)return false;
+    const mq=!q||[d.title,d.subject,d.desc,d.author].join(' ').toLowerCase().includes(q.toLowerCase());
+    return mq&&(!subj||d.subject===subj)&&(!type||d.type===type);
+  });
+  const el=document.getElementById('exploreResults');
+  document.getElementById('exploreCount').textContent=list.length+' résultat'+(list.length!==1?'s':'');
+  el.innerHTML=list.length?list.map(d=>`
+    <div class="result-card" onclick="openDoc(${d.id})">
+      <span class="doc-type type-${d.type}">${d.type.toUpperCase()}</span>
+      <h4>${d.title}</h4>
+      <p>${d.desc}</p>
+      <div class="result-author">✍️ ${d.author} &nbsp;•&nbsp; ${d.level} &nbsp;•&nbsp; 👁️ ${d.views}</div>
+    </div>`).join(''):'<p style="color:var(--text2);font-size:0.9rem;grid-column:1/-1">Aucun résultat trouvé.</p>';
+}
+function filterExplore(){renderExplore(document.getElementById('exploreSearch').value,document.getElementById('filterSubject').value,document.getElementById('filterType').value);}
+function doSearch(){
+  const q=document.getElementById('globalSearch').value;if(!q)return;
+  showPanel('explore',document.querySelectorAll('.sidebar-item')[1]);
+  document.getElementById('exploreSearch').value=q;filterExplore();
+}
+
+let uploadedFile=null;
+function handleFile(file){
+  if(!file)return;
+  uploadedFile=file;
+  document.getElementById('uploadPreview').style.display='block';
+  document.getElementById('previewName').textContent=file.name;
+  document.getElementById('previewSize').textContent=(file.size/1024/1024).toFixed(2)+' Mo';
+  document.getElementById('previewIcon').textContent=file.type.includes('pdf')?'📄':'🖼️';
+  let w=0;const fill=document.getElementById('progressFill');
+  const iv=setInterval(()=>{w+=8;fill.style.width=Math.min(w,100)+'%';if(w>=100)clearInterval(iv);},60);
+}
+function handleDrop(e){e.preventDefault();document.getElementById('uploadZone').classList.remove('drag');handleFile(e.dataTransfer.files[0]);}
+function cancelUpload(){document.getElementById('uploadPreview').style.display='none';document.getElementById('fileInput').value='';document.getElementById('progressFill').style.width='0%';uploadedFile=null;}
+function submitDoc(){
+  const title=document.getElementById('docTitle').value.trim();
+  const subject=document.getElementById('docSubject').value;
+  const level=document.getElementById('docLevel').value;
+  const desc=document.getElementById('docDesc').value.trim();
+  if(!title||!subject||!level){showToast('⚠️ Remplis tous les champs obligatoires','warn');return;}
+  const nd={id:Date.now(),title,subject,level,type:uploadedFile&&uploadedFile.type.includes('pdf')?'pdf':'img',author:currentUser?.name||'Anonyme',views:0,approved:false,desc:desc||'—'};
+  docs.unshift(nd);myDocs.unshift(nd);
+  document.getElementById('statMyDocs').textContent=myDocs.length;
+  ['docTitle','docDesc'].forEach(id=>document.getElementById(id).value='');
+  ['docSubject','docLevel'].forEach(id=>document.getElementById(id).selectedIndex=0);
+  cancelUpload();
+  showToast('📨 Document soumis ! En attente de validation.','ok');
+}
+function renderMyDocs(){
+  const el=document.getElementById('myDocsList');
+  if(!myDocs.length){el.innerHTML='<p style="color:var(--text2);font-size:0.9rem;">Aucune publication. <a href="#" onclick="showPanel(\'upload\',null)" style="color:var(--accent)">Publier maintenant →</a></p>';return;}
+  el.innerHTML=myDocs.map(d=>`
+    <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--surface2);border-radius:8px;margin-bottom:0.8rem;border:1px solid var(--border)">
+      <span style="font-size:1.5rem">${d.type==='pdf'?'📄':'🖼️'}</span>
+      <div style="flex:1"><div style="font-weight:700;font-size:0.9rem">${d.title}</div><div style="font-size:0.78rem;color:var(--text2)">${d.subject} • ${d.level}</div></div>
+      <span class="status-dot ${d.approved?'status-approved':'status-pending'}">${d.approved?'✅ Approuvé':'⏳ En attente'}</span>
+    </div>`).join('');
+}
+
+async function sendChat(){
+  const inp=document.getElementById('chatInput');
+  const q=inp.value.trim();if(!q)return;
+  inp.value='';
+  addMsg('user',q,'Moi');
+  const typing=addTyping();
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system:`Tu es un assistant pédagogique enthousiaste de la plateforme MySchool (école en Côte d'Ivoire).
+Tu aides les élèves et étudiants africains avec leurs cours scolaires : mathématiques, sciences, français, histoire-géographie, anglais, informatique, etc.
+Réponds toujours en français. Sois clair, chaleureux et encourageant.
+Utilise des exemples concrets et accessibles. Pour les exercices, guide pas à pas sans donner directement la réponse finale.
+Si c'est une formule ou un calcul, montre les étapes clairement.`,
+        messages:[{role:'user',content:q}]
+      })
+    });
+    typing.remove();
+    const data=await res.json();
+    const text=data.content?.[0]?.text||"Je n'ai pas pu répondre. Réessaie ou demande à un enseignant !";
+    addMsg('ai',text,'IA MySchool');
+  }catch(e){
+    typing.remove();
+    addMsg('ai',"Désolé, je rencontre un problème de connexion 😕\nEssaie de poser ta question à un enseignant en ligne ! 👩‍🏫",'IA MySchool');
+  }
+}
+function addMsg(role,text,name){
+  const box=document.getElementById('chatMessages');
+  const avMap={ai:'🤖',user:'😊',teacher:'👩‍🏫'};
+  const avClass={ai:'ai',user:'user-av',teacher:'teacher'};
+  const now=new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+  const div=document.createElement('div');
+  div.className='msg '+role;
+  div.innerHTML=`<div class="msg-avatar ${avClass[role]||'user-av'}">${avMap[role]||name[0]}</div><div><div class="msg-bubble">${text}</div><div class="msg-meta">${name} • ${now}</div></div>`;
+  box.appendChild(div);box.scrollTop=box.scrollHeight;return div;
+}
+function addTyping(){
+  const box=document.getElementById('chatMessages');
+  const div=document.createElement('div');div.className='msg ai';
+  div.innerHTML=`<div class="msg-avatar ai">🤖</div><div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div></div>`;
+  box.appendChild(div);box.scrollTop=box.scrollHeight;return div;
+}
+function quickQ(q){document.getElementById('chatInput').value=q;sendChat();}
+function callTeacher(name,subj){
+  addMsg('teacher',`Bonjour ! Je suis ${name}, professeur de ${subj}.\nComment puis-je t'aider aujourd'hui ? 😊`,name);
+  showPanel('chat',document.querySelectorAll('.sidebar-item')[4]);
+  showToast('📞 '+name+' a rejoint la conversation !','ok');
+}
+
+function approveDoc(btn){
+  const row=btn.closest('tr');
+  const title=row.dataset.title;
+  row.querySelector('.status-dot').outerHTML='<span class="status-dot status-approved">✅ Approuvé</span>';
+  btn.closest('td').innerHTML='<span style="color:var(--accent2);font-size:0.85rem;font-weight:600">Approuvé</span>';
+  const d=docs.find(x=>x.title.startsWith(title.split(' ')[0]));
+  if(d){d.approved=true;renderDocs();renderExplore();}
+  updatePendingCount();
+  showToast('✅ "'+title+'" approuvé et publié !','ok');
+}
+function rejectDoc(btn){
+  const row=btn.closest('tr');
+  row.querySelector('.status-dot').outerHTML='<span class="status-dot status-rejected">❌ Rejeté</span>';
+  btn.closest('td').innerHTML='<span style="color:var(--danger);font-size:0.85rem;font-weight:600">Rejeté</span>';
+  updatePendingCount();
+  showToast('❌ Document rejeté.','warn');
+}
+function updatePendingCount(){
+  const n=document.querySelectorAll('#adminTable .status-pending').length;
+  const el=document.getElementById('pendingCount');
+  el.textContent=n;el.style.display=n>0?'inline':'none';
+}
+
+function showToast(msg,type='ok'){
+  const t=document.createElement('div');t.className='toast';
+  const colors={ok:'var(--accent2)',warn:'var(--gold)',info:'var(--accent)'};
+  t.style.borderColor=colors[type]||'var(--border)';t.textContent=msg;
+  document.body.appendChild(t);setTimeout(()=>t.remove(),3500);
+}
+
+// Init
+renderExplore();
+
+// ══════════════════════════════
+// FIREBASE REALTIME DATABASE
+// ══════════════════════════════
+const FB_URL = "https://myschool-app-9f54e-default-rtdb.firebaseio.com";
+
+async function fbGet(path){
+  const r=await fetch(`${FB_URL}/${path}.json`);
+  return r.ok?r.json():null;
+}
+async function fbSet(path,data){
+  await fetch(`${FB_URL}/${path}.json`,{method:'PUT',body:JSON.stringify(data)});
+}
+async function fbPush(path,data){
+  const r=await fetch(`${FB_URL}/${path}.json`,{method:'POST',body:JSON.stringify(data)});
+  return r.json();
+}
+async function fbUpdate(path,data){
+  await fetch(`${FB_URL}/${path}.json`,{method:'PATCH',body:JSON.stringify(data)});
+}
+async function fbDelete(path){
+  await fetch(`${FB_URL}/${path}.json`,{method:'DELETE'});
+}
+
+// ── Sauvegarde utilisateur ──
+async function saveUser(user){
+  const key=user.email.replace(/[.@]/g,'_');
+  await fbSet(`users/${key}`,{name:user.name,role:user.role,email:user.email,createdAt:Date.now()});
+}
+
+// ── Charger les documents depuis Firebase ──
+async function loadDocsFromDB(){
+  showToast('⏳ Chargement des ressources...','info');
+  const data=await fbGet('documents');
+  if(data){
+    const fbDocs=Object.entries(data).map(([k,v])=>({...v,fbKey:k}));
+    // Fusionner avec les docs locaux en évitant les doublons
+    fbDocs.forEach(fd=>{
+      if(!docs.find(d=>d.fbKey===fd.fbKey)) docs.unshift(fd);
+    });
+  }
+  renderDocs();renderExplore();
+  document.getElementById('statDocs').textContent=docs.filter(d=>d.approved).length;
+}
+
+// ── Soumettre un document vers Firebase ──
+async function submitDocToDB(docData){
+  try{
+    const res=await fbPush('documents',docData);
+    return res.name; // Firebase key
+  }catch(e){
+    console.error('Firebase error:',e);
+    return null;
+  }
+}
+
+// ── Approuver un document dans Firebase ──
+async function approveDocInDB(fbKey){
+  if(fbKey) await fbUpdate(`documents/${fbKey}`,{approved:true});
+}
+
+// ── Charger l'emploi du temps depuis Firebase ──
+async function loadScheduleFromDB(){
+  if(!currentUser) return;
+  const key=currentUser.email.replace(/[.@]/g,'_');
+  const data=await fbGet(`schedules/${key}`);
+  if(data){
+    scheduleSlots=Object.entries(data).map(([k,v])=>({...v,fbKey:k}));
+  }
+  renderSchedule();
+}
+
+// ── Sauvegarder un slot dans Firebase ──
+async function saveSlotToDB(slot){
+  if(!currentUser) return null;
+  const key=currentUser.email.replace(/[.@]/g,'_');
+  const res=await fbPush(`schedules/${key}`,slot);
+  return res?.name;
+}
+
+// ── Supprimer un slot dans Firebase ──
+async function deleteSlotFromDB(fbKey){
+  if(!currentUser||!fbKey) return;
+  const key=currentUser.email.replace(/[.@]/g,'_');
+  await fbDelete(`schedules/${key}/${fbKey}`);
+}
+
+// ── Surcharge submitDoc pour sauvegarder dans Firebase ──
+const _origSubmitDoc = submitDoc;
+submitDoc = async function(){
+  const title=document.getElementById('docTitle').value.trim();
+  const subject=document.getElementById('docSubject').value;
+  const level=document.getElementById('docLevel').value;
+  const desc=document.getElementById('docDesc').value.trim();
+  if(!title||!subject||!level){showToast('⚠️ Remplis tous les champs obligatoires','warn');return;}
+  const nd={
+    title,subject,level,desc:desc||'—',
+    type:uploadedFile&&uploadedFile.type.includes('pdf')?'pdf':'img',
+    author:currentUser?.name||'Anonyme',
+    views:0,approved:false,createdAt:Date.now()
+  };
+  showToast('⏳ Envoi en cours...','info');
+  const fbKey=await submitDocToDB(nd);
+  nd.id=Date.now();nd.fbKey=fbKey;
+  docs.unshift(nd);myDocs.unshift(nd);
+  document.getElementById('statMyDocs').textContent=myDocs.length;
+  ['docTitle','docDesc'].forEach(id=>document.getElementById(id).value='');
+  ['docSubject','docLevel'].forEach(id=>document.getElementById(id).selectedIndex=0);
+  cancelUpload();renderMyDocs();
+  showToast('📨 Document soumis et sauvegardé dans Firebase !','ok');
+};
+
+// ── Surcharge loginAs pour sauvegarder l'utilisateur ──
+const _origLoginAs = loginAs;
+loginAs = async function(user){
+  _origLoginAs(user);
+  await saveUser(user);
+  await loadDocsFromDB();
+  await loadScheduleFromDB();
+};
+
+// ── EMPLOI DU TEMPS ──
+let scheduleSlots=[];
+let currentWeekOffset=0;
+
+const HOURS=[7,8,9,10,11,12,13,14,15,16,17];
+const DAYS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const COLORS={
+  'Mathématiques':'#3b82f6','Sciences':'#10b981','Français':'#f59e0b',
+  'Histoire-Géo':'#8b5cf6','Anglais':'#ef4444','Informatique':'#06b6d4',
+  'Éducation Physique':'#f97316'
+};
+
+function getWeekDates(offset=0){
+  const now=new Date();
+  const day=now.getDay()||7;
+  const monday=new Date(now);
+  monday.setDate(now.getDate()-day+1+offset*7);
+  return Array.from({length:6},(_,i)=>{
+    const d=new Date(monday);d.setDate(monday.getDate()+i);return d;
+  });
+}
+
+function changeWeek(dir){currentWeekOffset+=dir;renderSchedule();}
+
+function renderSchedule(){
+  const dates=getWeekDates(currentWeekOffset);
+  const fmt=d=>d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+  document.getElementById('weekLabel').textContent=`${fmt(dates[0])} — ${fmt(dates[5])}`;
+
+  // Update headers with dates
+  const ths=document.querySelectorAll('#scheduleTable thead th');
+  DAYS.forEach((d,i)=>{if(ths[i+1])ths[i+1].innerHTML=`${d}<br><span style="font-weight:400;color:var(--text3)">${fmt(dates[i])}</span>`;});
+
+  const tbody=document.getElementById('scheduleBody');
+  tbody.innerHTML=HOURS.map(h=>`
+    <tr>
+      <td style="text-align:center;font-size:0.8rem;color:var(--text2);font-weight:600;padding:0.5rem;">${String(h).padStart(2,'0')}h00</td>
+      ${DAYS.map((_,di)=>{
+        const slot=scheduleSlots.find(s=>s.day==di&&s.hour==h);
+        if(slot){
+          const col=COLORS[slot.subject]||'var(--accent)';
+          return `<td style="padding:3px;">
+            <div style="background:${col}22;border-left:3px solid ${col};border-radius:6px;padding:6px 8px;font-size:0.78rem;cursor:pointer;position:relative;" onclick="deleteSlot('${slot.fbKey||''}',${scheduleSlots.indexOf(slot)})">
+              <div style="font-weight:700;color:${col}">${slot.subject}</div>
+              ${slot.teacher?`<div style="color:var(--text2)">${slot.teacher}</div>`:''}
+              ${slot.room?`<div style="color:var(--text3)">${slot.room}</div>`:''}
+              <div style="position:absolute;top:3px;right:5px;color:var(--text3);font-size:0.7rem;">✕</div>
+            </div>
+          </td>`;
+        }
+        return `<td style="padding:3px;"><div style="height:52px;border-radius:6px;cursor:pointer;transition:0.2s;" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background=''" onclick="quickAddSlot(${di},${h})"></div></td>`;
+      }).join('')}
+    </tr>`).join('');
+}
+
+function openAddSlot(){document.getElementById('slotModal').classList.add('open');}
+function closeSlotModal(){document.getElementById('slotModal').classList.remove('open');}
+function quickAddSlot(day,hour){
+  document.getElementById('slotDay').value=day;
+  document.getElementById('slotHour').value=hour;
+  openAddSlot();
+}
+
+async function addSlot(){
+  const subject=document.getElementById('slotSubject').value;
+  const day=document.getElementById('slotDay').value;
+  const hour=document.getElementById('slotHour').value;
+  const teacher=document.getElementById('slotTeacher').value;
+  const room=document.getElementById('slotRoom').value;
+  if(!subject){showToast('⚠️ Choisis une matière','warn');return;}
+  const slot={subject,day:parseInt(day),hour:parseInt(hour),teacher,room};
+  showToast('⏳ Sauvegarde...','info');
+  const fbKey=await saveSlotToDB(slot);
+  slot.fbKey=fbKey;
+  scheduleSlots.push(slot);
+  closeSlotModal();renderSchedule();
+  // Reset
+  ['slotSubject','slotTeacher','slotRoom'].forEach(id=>document.getElementById(id).value='');
+  showToast('✅ Cours ajouté et sauvegardé !','ok');
+}
+
+async function deleteSlot(fbKey,idx){
+  if(!confirm('Supprimer ce cours ?'))return;
+  await deleteSlotFromDB(fbKey);
+  scheduleSlots.splice(idx,1);
+  renderSchedule();
+  showToast('🗑️ Cours supprimé','ok');
+}
+
+// ── PAIEMENT ──
+let selectedPlan=null;
+let selectedMethod=null;
+
+function selectPlan(plan,label){
+  selectedPlan=plan;
+  document.getElementById('selectedPlanLabel').textContent=label;
+  document.getElementById('paymentSection').style.display='block';
+  document.getElementById('payDetails').style.display='none';
+  document.querySelectorAll('.pay-method').forEach(m=>m.style.borderColor='var(--border)');
+  document.getElementById('paymentSection').scrollIntoView({behavior:'smooth'});
+}
+
+function selectPayMethod(el,method){
+  selectedMethod=method;
+  document.querySelectorAll('.pay-method').forEach(m=>m.style.borderColor='var(--border)');
+  el.style.borderColor='var(--accent)';
+  document.getElementById('payDetails').style.display='block';
+  document.getElementById('payMethodLabel').textContent=method;
+  document.getElementById('payPhone').placeholder=
+    method==='Carte bancaire'?'0000 0000 0000 0000':'Ex: 07 00 00 00 00';
+}
+
+async function confirmPayment(){
+  const phone=document.getElementById('payPhone').value;
+  if(!phone){showToast('⚠️ Entre ton numéro','warn');return;}
+  showToast('⏳ Traitement du paiement...','info');
+
+  // Simuler délai paiement
+  await new Promise(r=>setTimeout(r,2000));
+
+  // Sauvegarder dans Firebase
+  const payment={
+    user:currentUser?.email||'—',
+    plan:selectedPlan,
+    method:selectedMethod,
+    phone,
+    amount:selectedPlan==='premium'?'5 000':'2 500',
+    date:new Date().toLocaleDateString('fr-FR'),
+    status:'confirmé',
+    timestamp:Date.now()
+  };
+  await fbPush('payments',payment);
+
+  // Mettre à jour affichage plan
+  const planNames={etudiant:'📚 Étudiant',premium:'⭐ Premium'};
+  const planDescs={etudiant:'Upload illimité + IA illimitée + Enseignants',premium:'Tous les avantages + Cours vidéo + Certificats'};
+  document.getElementById('currentPlanName').textContent=planNames[selectedPlan];
+  document.getElementById('currentPlanDesc').textContent=planDescs[selectedPlan];
+  const badge=document.getElementById('currentPlanBadge');
+  badge.textContent=selectedPlan.toUpperCase();
+  badge.style.background=selectedPlan==='premium'?'rgba(245,158,11,0.2)':'rgba(59,130,246,0.2)';
+  badge.style.color=selectedPlan==='premium'?'var(--gold)':'var(--accent)';
+
+  // Historique
+  const hist=document.getElementById('payHistory');
+  const row=document.createElement('div');
+  row.style.cssText='display:flex;align-items:center;gap:1rem;padding:0.8rem;background:var(--surface2);border-radius:8px;margin-bottom:0.5rem;font-size:0.85rem;';
+  row.innerHTML=`<span>💳</span><div style="flex:1"><b>${planNames[selectedPlan]}</b> — ${payment.amount} FCFA<br><span style="color:var(--text2)">${payment.method} • ${payment.date}</span></div><span class="status-dot status-approved">✅ Confirmé</span>`;
+  if(hist.textContent.includes('Aucun')) hist.innerHTML='';
+  hist.prepend(row);
+
+  document.getElementById('paymentSection').style.display='none';
+  document.getElementById('payPhone').value='';
+  showToast('🎉 Paiement confirmé ! Plan '+planNames[selectedPlan]+' activé !','ok');
+}
+
+// ══════════════════════════════
+// ADMIN DASHBOARD
+// ══════════════════════════════
+let allUsers=[], allAdminDocs=[], allPayments=[];
+
+async function loadAdminData(){
+  showToast('⏳ Chargement des données...','info');
+  await Promise.all([loadUsers(), loadAdminDocs(), loadAdminPayments()]);
+  showToast('✅ Données actualisées !','ok');
+}
+
+async function loadUsers(){
+  const data = await fbGet('users');
+  if(!data){document.getElementById('usersTable').innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text2);padding:2rem;">Aucun inscrit pour l\'instant.</td></tr>';return;}
+  allUsers = Object.entries(data).map(([k,v])=>({...v,fbKey:k}));
+  document.getElementById('adminStatUsers').textContent = allUsers.length;
+  renderUsersTable(allUsers);
+}
+
+function renderUsersTable(users){
+  const tbody = document.getElementById('usersTable');
+  if(!users.length){tbody.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text2);padding:2rem;">Aucun résultat.</td></tr>';return;}
+  tbody.innerHTML = users.map(u=>{
+    const date = u.createdAt ? new Date(u.createdAt).toLocaleDateString('fr-FR') : '—';
+    const roleLabel = {student:'👨‍🎓 Élève', teacher:'👩‍🏫 Enseignant', admin:'⚙️ Admin'}[u.role]||'—';
+    const roleCls = {student:'role-student',teacher:'role-teacher',admin:'role-admin'}[u.role]||'';
+    return `<tr>
+      <td><b>${u.name||'—'}</b></td>
+      <td style="color:var(--text2)">${u.email||'—'}</td>
+      <td><span class="role-badge ${roleCls}">${roleLabel}</span></td>
+      <td style="color:var(--text2)">${date}</td>
+      <td>
+        <button class="btn btn-sm btn-ghost" onclick="promoteUser('${u.fbKey}','${u.role}')">
+          ${u.role==='student'?'⬆️ Promouvoir':'👨‍🎓 Rétrograder'}
+        </button>
+        <button class="btn btn-sm btn-danger" style="margin-left:4px" onclick="deleteUser('${u.fbKey}')">🗑️</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function filterAdminUsers(){
+  const q = document.getElementById('searchUsers').value.toLowerCase();
+  const filtered = allUsers.filter(u=>
+    (u.name||'').toLowerCase().includes(q)||(u.email||'').toLowerCase().includes(q)||(u.role||'').toLowerCase().includes(q)
+  );
+  renderUsersTable(filtered);
+}
+
+async function promoteUser(fbKey, currentRole){
+  const newRole = currentRole==='student'?'teacher':'student';
+  await fbUpdate(`users/${fbKey}`,{role:newRole});
+  showToast(`✅ Rôle mis à jour → ${newRole==='teacher'?'Enseignant':'Élève'}`,'ok');
+  await loadUsers();
+}
+
+async function deleteUser(fbKey){
+  if(!confirm('Supprimer cet utilisateur ?')) return;
+  await fbDelete(`users/${fbKey}`);
+  showToast('🗑️ Utilisateur supprimé','ok');
+  await loadUsers();
+}
+
+async function loadAdminDocs(){
+  const data = await fbGet('documents');
+  if(!data){
+    document.getElementById('adminDocsTable').innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text2);padding:2rem;">Aucun document soumis.</td></tr>';
+    document.getElementById('adminStatDocs').textContent='0';
+    document.getElementById('adminStatPending').textContent='0';
+    return;
+  }
+  allAdminDocs = Object.entries(data).map(([k,v])=>({...v,fbKey:k}));
+  document.getElementById('adminStatDocs').textContent = allAdminDocs.length;
+  document.getElementById('adminStatPending').textContent = allAdminDocs.filter(d=>!d.approved).length;
+  const tbody = document.getElementById('adminDocsTable');
+  tbody.innerHTML = allAdminDocs.map(d=>{
+    const date = d.createdAt ? new Date(d.createdAt).toLocaleDateString('fr-FR') : '—';
+    const statusCls = d.approved?'status-approved':'status-pending';
+    const statusTxt = d.approved?'✅ Approuvé':'⏳ En attente';
+    return `<tr>
+      <td><b>${d.title||'—'}</b><br><span style="font-size:0.75rem;color:var(--text3)">${(d.type||'').toUpperCase()}</span></td>
+      <td>${d.author||'—'}</td>
+      <td>${d.subject||'—'}</td>
+      <td style="color:var(--text2)">${date}</td>
+      <td><span class="status-dot ${statusCls}">${statusTxt}</span></td>
+      <td>
+        ${!d.approved?`<button class="btn btn-sm btn-green" onclick="adminApproveDoc('${d.fbKey}',this)">✓</button>`:''}
+        <button class="btn btn-sm btn-danger" style="margin-left:4px" onclick="adminDeleteDoc('${d.fbKey}',this)">🗑️</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+async function adminApproveDoc(fbKey, btn){
+  await fbUpdate(`documents/${fbKey}`,{approved:true});
+  const row = btn.closest('tr');
+  row.querySelector('.status-dot').outerHTML='<span class="status-dot status-approved">✅ Approuvé</span>';
+  btn.remove();
+  // Aussi mettre à jour dans la liste locale
+  const d = docs.find(x=>x.fbKey===fbKey);
+  if(d) d.approved=true;
+  renderDocs(); renderExplore();
+  const pending = allAdminDocs.filter(d=>!d.approved).length - 1;
+  document.getElementById('adminStatPending').textContent = Math.max(0, pending);
+  showToast('✅ Document approuvé et publié !','ok');
+}
+
+async function adminDeleteDoc(fbKey, btn){
+  if(!confirm('Supprimer ce document définitivement ?')) return;
+  await fbDelete(`documents/${fbKey}`);
+  btn.closest('tr').remove();
+  showToast('🗑️ Document supprimé','ok');
+  await loadAdminDocs();
+}
+
+async function loadAdminPayments(){
+  const data = await fbGet('payments');
+  if(!data){
+    document.getElementById('adminPaymentsTable').innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text2);padding:2rem;">Aucun paiement enregistré.</td></tr>';
+    document.getElementById('adminStatPayments').textContent='0 FCFA';
+    return;
+  }
+  allPayments = Object.entries(data).map(([k,v])=>({...v,fbKey:k}));
+  const total = allPayments.reduce((s,p)=>s+parseInt((p.amount||'0').replace(/\s/g,'')),0);
+  document.getElementById('adminStatPayments').textContent = total.toLocaleString('fr-FR')+' F';
+  const tbody = document.getElementById('adminPaymentsTable');
+  tbody.innerHTML = allPayments.map(p=>`
+    <tr>
+      <td>${p.user||'—'}</td>
+      <td><b>${p.plan==='premium'?'⭐ Premium':'📚 Étudiant'}</b></td>
+      <td style="color:var(--gold);font-weight:700">${p.amount||'—'} FCFA</td>
+      <td>${p.method||'—'}</td>
+      <td style="color:var(--text2)">${p.date||'—'}</td>
+      <td><span class="status-dot status-approved">✅ Confirmé</span></td>
+    </tr>`).join('');
+}
+
+function switchAdminTab(tab, btn){
+  ['users','docs','payments'].forEach(t=>{
+    document.getElementById('adminTab'+t.charAt(0).toUpperCase()+t.slice(1)).style.display='none';
+    document.getElementById('tab'+t.charAt(0).toUpperCase()+t.slice(1)).className='btn btn-sm btn-ghost';
+  });
+  document.getElementById('adminTab'+tab.charAt(0).toUpperCase()+tab.slice(1)).style.display='block';
+  btn.className='btn btn-sm btn-primary';
+}
+
+// Auto-load admin data when admin panel is shown
+const _origShowPanel = showPanel;
+showPanel = function(name, el){
+  _origShowPanel(name, el);
+  if(name==='admin') loadAdminData();
+};
+
+// Init schedule on load
+document.addEventListener('DOMContentLoaded',()=>{renderSchedule();});
+</script>
+</body>
+</html>
